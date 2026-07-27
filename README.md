@@ -42,7 +42,31 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    - Update the masthead "Last refreshed" date (`Thu 30 July 2026` format),
      the summary stat numbers, and each area section's `.count`.
 
-4. **Commit and push** to `main` with message `refresh: <date> — N listings, M new`.
+4. **PropertyData enrichment — MARYLEBONE LISTINGS ONLY** (user instruction: do not
+   spend credits on other areas). Requires the API key in env var
+   `PROPERTYDATA_API_KEY` (locally: `.env`, git-ignored — **NEVER commit the key**;
+   if the env var is absent, skip this step entirely and leave existing vitals as-is).
+
+   Base URL `https://api.propertydata.co.uk/<endpoint>?key=$KEY&postcode=...`
+   Rate limit: **4 calls per 10 seconds** — sleep between calls. ~1 credit/call;
+   trial account has 500 total, so enrich **new Marylebone listings only**, not
+   re-checks of ones that already have a `.vitals` block.
+
+   Per new Marylebone listing with a full postcode:
+   - `/conservation-area` and `/listed-buildings` → verification rows
+   - `/planning-applications` → one row only if something material is nearby
+   - Skip `/valuation-commercial-sale` and `/valuation-commercial-rent` unless the
+     listing states floor area (`property_type` + area params required) — never
+     guess a floor area to force a valuation.
+
+   Render results in a `<div class="vitals">` block inside the card, after `.specs`,
+   before `.card-foot` — see The Harcourt card for the exact markup (`.v-src` dated
+   header, `.v-row` rows, `.v-flag` for consent warnings). Keep the Marylebone
+   `.area-vitals` strip's date current if you refresh area stats (crime,
+   demographics, restaurants — district level; refresh at most monthly).
+   Only report values the API actually returned — never invent figures.
+
+5. **Commit and push** to `main` with message `refresh: <date> — N listings, M new`.
 
 ### Hard rules
 

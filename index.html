@@ -213,6 +213,34 @@
   .src-link:hover .arw { transform: translateX(3px); }
   .src-link:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 3px; border-radius: 3px; }
 
+  /* PropertyData vitals */
+  .vitals {
+    border-top: 1px dashed var(--line-strong); padding-top: 10px;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .vitals .v-src {
+    font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 600;
+  }
+  .vitals .v-row { font-size: 12.5px; color: var(--ink-soft); }
+  .vitals .v-row strong { font-weight: 600; color: var(--ink); }
+  .vitals .v-flag { color: var(--amber); font-weight: 600; }
+  .vitals a { color: var(--accent); text-decoration: none; }
+  .vitals a:hover { text-decoration: underline; }
+  .area-vitals {
+    display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 14px;
+    font-size: 12px; color: var(--ink-soft); align-items: center;
+  }
+  .area-vitals .av-label {
+    font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 600;
+  }
+  .area-vitals .av-chip {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: 6px; padding: 3px 9px;
+  }
+  .area-vitals .av-chip strong { color: var(--ink); font-weight: 600; }
+
   .empty-note {
     grid-column: 1 / -1; text-align: center; color: var(--ink-faint);
     font-size: 14px; padding: 22px; border: 1px dashed var(--line-strong);
@@ -314,6 +342,14 @@
         <span class="count">4 listings</span>
         <span class="postcode">W1U · W1H · NW1</span>
       </div>
+      <div class="area-vitals">
+        <span class="av-label">Area vitals · PropertyData · 27 Jul 2026</span>
+        <span class="av-chip"><strong>32%</strong> of W1U residents aged 20–34</span>
+        <span class="av-chip"><strong>43%</strong> top social grades (L1–L3, W1U)</span>
+        <span class="av-chip">Crime: <strong>very high</strong>, theft-led (typical central London)</span>
+        <span class="av-chip">Food hygiene avg <strong>4.4/5</strong> nearby</span>
+        <span class="av-chip">Low deprivation (W1U: 9, W1H: 11)</span>
+      </div>
       <div class="grid">
 
         <article class="card" data-area="marylebone" data-status="sale">
@@ -330,6 +366,12 @@
             <span><strong>Tenure:</strong> Freehold</span>
             <span><strong>Grade II listed</strong></span>
             <span><strong>W1H 4HX</strong></span>
+          </div>
+          <div class="vitals">
+            <span class="v-src">PropertyData checks · 27 Jul 2026</span>
+            <span class="v-row">✓ Verified <a href="https://historicengland.org.uk/listing/the-list/list-entry/1357078" target="_blank" rel="noopener"><strong>Grade II listed</strong></a> ("Harcourt Arms") — <span class="v-flag">listed-building consent needed for refit &amp; signage</span></span>
+            <span class="v-row">✓ Verified <strong>Portman Estate conservation area</strong> — external alterations constrained</span>
+            <span class="v-row">Nearby planning: residential conversions on York St — check noise-condition precedents before offer</span>
           </div>
           <div class="card-foot">
             <a class="src-link" href="https://www.rightmove.co.uk/properties/129134873" target="_blank" rel="noopener">Rightmove <span class="arw">→</span></a>
