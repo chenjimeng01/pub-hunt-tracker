@@ -218,7 +218,7 @@
   .pd-btn:hover { border-color: var(--accent-soft); }
   .pd-btn:disabled { opacity: .55; cursor: default; }
   .pd-btn:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
-  .vitals .v-err { color: var(--amber); font-size: 12.5px; }
+  .v-err { color: var(--amber); font-size: 12.5px; }
   .src-link {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none;
@@ -356,6 +356,7 @@
         <h2>Marylebone</h2>
         <span class="count">2 listings</span>
         <span class="postcode">W1U · W1H · NW1</span>
+        <button class="pd-btn pd-area-btn" type="button" data-pc="W1U">Area check</button>
       </div>
       <div class="area-vitals">
         <span class="av-label">Area vitals · PropertyData · 27 Jul 2026</span>
@@ -417,6 +418,7 @@
         <h2>Fitzrovia</h2>
         <span class="count">0 listings</span>
         <span class="postcode">W1T · W1W</span>
+        <button class="pd-btn pd-area-btn" type="button" data-pc="W1T">Area check</button>
       </div>
       <div class="grid">
         <p class="empty-note">No verified live hospitality listings in Fitzrovia proper right now (the Whitfield St cocktail-bar building went to "let agreed"). Nearby Soho/W1D stock exists but is outside the target areas — check the saved searches below for movement.</p>
@@ -429,6 +431,7 @@
         <h2>Notting Hill</h2>
         <span class="count">1 listing</span>
         <span class="postcode">W11 · W2 · W8</span>
+        <button class="pd-btn pd-area-btn" type="button" data-pc="W11">Area check</button>
       </div>
       <div class="grid">
 
@@ -461,6 +464,7 @@
         <h2>Primrose Hill</h2>
         <span class="count">1 listing</span>
         <span class="postcode">NW1 · NW3</span>
+        <button class="pd-btn pd-area-btn" type="button" data-pc="NW1">Area check</button>
       </div>
       <div class="grid">
 
@@ -650,6 +654,66 @@
       }
       card.insertBefore(v, card.querySelector(".card-foot"));
     }
+
+    function renderAreaChips(section, data) {
+      var old = section.querySelector(".area-vitals[data-dynamic]");
+      if (old) old.remove();
+      var wrap = el("div", "area-vitals");
+      wrap.setAttribute("data-dynamic", "1");
+      var when = new Date(data.fetched_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+      wrap.appendChild(el("span", "av-label", "Live area check · " + data.postcode + " · " + when + (data.cached ? " (cached)" : "")));
+      var r = data.results || {};
+      if (r.crime && !r.crime.error) {
+        var c = el("span", "av-chip");
+        c.appendChild(document.createTextNode("Crime: "));
+        c.appendChild(el("strong", null, r.crime.rating));
+        c.appendChild(document.createTextNode(" · " + r.crime.per_thousand + "/1,000 · top: " + (r.crime.top_types || []).slice(0, 2).join(", ")));
+        wrap.appendChild(c);
+      }
+      if (r.demographics && !r.demographics.error) {
+        var d = r.demographics;
+        var c1 = el("span", "av-chip");
+        c1.appendChild(el("strong", null, d.aged_20_34_pct + "%"));
+        c1.appendChild(document.createTextNode(" residents aged 20–34"));
+        wrap.appendChild(c1);
+        var c2 = el("span", "av-chip");
+        c2.appendChild(el("strong", null, d.top_social_grades_pct + "%"));
+        c2.appendChild(document.createTextNode(" top social grades (L1–L3)"));
+        wrap.appendChild(c2);
+        wrap.appendChild(el("span", "av-chip", "Deprivation score " + d.deprivation + " (lower = less deprived)"));
+      }
+      section.insertBefore(wrap, section.querySelector(".grid"));
+    }
+
+    document.querySelectorAll(".pd-area-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var section = btn.closest(".area-block");
+        btn.disabled = true;
+        btn.textContent = "Checking…";
+        fetch(FN_URL, {
+          method: "POST",
+          headers: { "Authorization": "Bearer " + ANON, "apikey": ANON, "Content-Type": "application/json" },
+          body: JSON.stringify({ postcode: btn.getAttribute("data-pc") })
+        })
+          .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j }; }); })
+          .then(function (r) {
+            if (!r.ok || r.j.error) throw new Error(r.j.error || "Lookup failed");
+            renderAreaChips(section, r.j);
+            btn.textContent = "Re-check area";
+            btn.disabled = false;
+          })
+          .catch(function (e) {
+            var old = section.querySelector(".area-vitals[data-dynamic]");
+            if (old) old.remove();
+            var wrap = el("div", "area-vitals");
+            wrap.setAttribute("data-dynamic", "1");
+            wrap.appendChild(el("span", "v-err", "Check failed: " + e.message));
+            section.insertBefore(wrap, section.querySelector(".grid"));
+            btn.textContent = "Area check";
+            btn.disabled = false;
+          });
+      });
+    });
 
     document.querySelectorAll(".card[data-pc] .pd-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {

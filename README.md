@@ -66,6 +66,9 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    child of `.card-foot`: `<button class="pd-btn" type="button">PropertyData check</button>`
    — it powers the on-demand PropertyData lookup (Supabase edge function
    `pubhunt-propertydata`; the page JS handles the rest, do not modify it).
+   Each `.area-head` likewise keeps its `<button class="pd-btn pd-area-btn"
+   type="button" data-pc="<district>">Area check</button>` (districts: Marylebone
+   W1U, Fitzrovia W1T, Notting Hill W11, Primrose Hill NW1).
 
 5. **PropertyData enrichment — MARYLEBONE LISTINGS ONLY** (user instruction: do not
    spend credits on other areas). Requires the API key in env var
