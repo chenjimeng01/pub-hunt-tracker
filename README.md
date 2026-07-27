@@ -75,8 +75,13 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    - Update the masthead "Last refreshed" date (`Thu 30 July 2026` format),
      the summary stat numbers, and each area section's `.count`.
 
-   Every card also carries `data-pc="<postcode>"` on its `<article>` (full postcode
-   if the listing publishes one, else the district) and this button as the last
+   Every card also carries `data-pc="<postcode>"` on its `<article>` — always
+   resolve the FULL postcode: if the listing doesn't publish one, extract the
+   listing page's map coordinates (Zoopla embeds `"latitude"`/`"longitude"` in
+   the page source) and reverse-geocode via
+   `api.postcodes.io/postcodes?lon=<lng>&lat=<lat>` (free, no key). Full
+   postcodes unlock property-level PropertyData checks (conservation, listed,
+   planning, floor areas, £/sqft) instead of the district fallback and this button as the last
    child of `.card-foot`: `<button class="pd-btn" type="button">PropertyData check</button>`
    — it powers the on-demand PropertyData lookup (Supabase edge function
    `pubhunt-propertydata`; the page JS handles the rest, do not modify it).
