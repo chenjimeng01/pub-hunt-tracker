@@ -368,7 +368,7 @@
       </div>
       <div class="grid">
 
-        <article class="card" data-area="marylebone" data-status="sale" data-pc="NW1">
+        <article class="card" data-area="marylebone" data-status="sale" data-pc="NW1 5NX">
           <div class="card-tags">
             <span class="tag" style="background:var(--accent);color:#fff">New</span>
             <span class="tag sale">For sale</span>
@@ -389,7 +389,7 @@
           </div>
         </article>
 
-        <article class="card" data-area="marylebone" data-status="let" data-pc="NW1">
+        <article class="card" data-area="marylebone" data-status="let" data-pc="NW1 5RA">
           <div class="card-tags">
             <span class="tag let">To let</span>
             <span class="tag type">Restaurant</span>
@@ -435,7 +435,7 @@
       </div>
       <div class="grid">
 
-        <article class="card" data-area="notting-hill" data-status="let" data-pc="W11">
+        <article class="card" data-area="notting-hill" data-status="let" data-pc="W11 3HL">
           <div class="card-tags">
             <span class="tag" style="background:var(--accent);color:#fff">New</span>
             <span class="tag let">To let</span>
@@ -490,7 +490,7 @@
           </div>
         </article>
 
-        <article class="card" data-area="primrose-hill" data-status="let" data-pc="NW1">
+        <article class="card" data-area="primrose-hill" data-status="let" data-pc="NW1 8AN">
           <div class="card-tags">
             <span class="tag let">To let</span>
             <span class="tag type">Restaurant / Bar</span>
@@ -660,7 +660,16 @@
         }
         if (r.planning && !r.planning.error) {
           v.appendChild(el("span", "v-row", "Planning applications nearby: " + r.planning.count +
-            (r.planning.recent && r.planning.recent.length ? " — latest: " + r.planning.recent[0].proposal : "")));
+            (r.planning.recent && r.planning.recent.length ? " — latest (" + r.planning.recent[0].address + "): " + r.planning.recent[0].proposal : "")));
+        }
+        if (Array.isArray(r.floor_areas) && r.floor_areas.length) {
+          v.appendChild(el("span", "v-row", "Recorded floor areas at this postcode: " +
+            r.floor_areas.slice(0, 3).map(function (f) { return f.address + " (" + Number(f.sqf).toLocaleString() + " sq ft)"; }).join(" · ")));
+        }
+        if (r.price_per_sqf && !r.price_per_sqf.error && r.price_per_sqf.average) {
+          v.appendChild(el("span", "v-row", "Local sold-price benchmark: £" +
+            Number(r.price_per_sqf.average).toLocaleString() + "/sq ft" +
+            (r.price_per_sqf.points ? " (" + r.price_per_sqf.points + " data points)" : "")));
         }
       } else {
         if (r.crime && !r.crime.error) {
