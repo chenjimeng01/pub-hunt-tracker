@@ -24,6 +24,20 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
      and `.../commercial-property-to-let/...`), Zoopla commercial hospitality,
      OnTheMarket commercial.
 
+   **Agent-direct stock is the biggest blind spot** — specialist agents often
+   market pubs only on their own sites, which block direct fetching (Savills
+   returns 403). Sweep them via web search each run, one query per area, e.g.:
+   `site:search.savills.com pub <area>` · `"pub" "<area>" for sale Savills OR
+   Christie OR Fleurets OR "licensed leisure"` · `pub freehold <area> NW1/W1/W11
+   for sale 2026`. When an agent page can't be fetched, find the same listing's
+   portal mirror (Rightmove/Zoopla carry most Savills licensed-leisure stock) and
+   verify + link THAT. Missing agent-only listings is how The Albert (Primrose
+   Hill, £2.475m, on the market for months) was initially missed.
+
+   **Distinguish investment sales from vacant possession.** A pub freehold sold
+   with a sitting tenant on an FRI lease buys the income, not the keys — tag such
+   cards "Pub (investment)" and state the lease/break terms in the description.
+
    For each candidate capture: name/address, area, postcode, sale vs let,
    freehold/leasehold if stated, price or annual rent, size/covers, a one-line
    description, and the **direct source URL**.
