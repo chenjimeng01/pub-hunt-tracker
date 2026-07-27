@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>London Pub Property Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
+<style>
+  * { margin: 0; }
+  :root {
+    --bg: #f3f0e9;
+    --surface: #fbf9f4;
+    --surface-2: #f0ece2;
+    --ink: #23261f;
+    --ink-soft: #4d5142;
+    --ink-faint: #757a68;
+    --line: #ddd7c8;
+    --line-strong: #cabf9f;
+    --accent: #1f5c47;
+    --accent-soft: #2f7a5f;
+    --accent-wash: #e4ede6;
+    --amber: #9a6a12;
+    --amber-wash: #f2e7cf;
+    --blue: #2b5878;
+    --blue-wash: #dde8f0;
+    --plum: #6d3d55;
+    --plum-wash: #ecdfe6;
+    --radius: 10px;
+    --shadow: 0 1px 2px rgba(35,38,31,.06), 0 6px 20px rgba(35,38,31,.05);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "SF Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161813;
+      --surface: #1f221b;
+      --surface-2: #262a20;
+      --ink: #eae7db;
+      --ink-soft: #bcbaa9;
+      --ink-faint: #8b8b77;
+      --line: #33372b;
+      --line-strong: #454a3a;
+      --accent: #6bc7a3;
+      --accent-soft: #7ed3b1;
+      --accent-wash: #223229;
+      --amber: #d7ab5e;
+      --amber-wash: #352c17;
+      --blue: #8fc0e0;
+      --blue-wash: #1c2c39;
+      --plum: #cd9bb6;
+      --plum-wash: #2f2029;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f3f0e9; --surface: #fbf9f4; --surface-2: #f0ece2; --ink: #23261f;
+    --ink-soft: #4d5142; --ink-faint: #757a68; --line: #ddd7c8; --line-strong: #cabf9f;
+    --accent: #1f5c47; --accent-soft: #2f7a5f; --accent-wash: #e4ede6;
+    --amber: #9a6a12; --amber-wash: #f2e7cf; --blue: #2b5878; --blue-wash: #dde8f0;
+    --plum: #6d3d55; --plum-wash: #ecdfe6;
+    --shadow: 0 1px 2px rgba(35,38,31,.06), 0 6px 20px rgba(35,38,31,.05);
+  }
+  :root[data-theme="dark"] {
+    --bg: #161813; --surface: #1f221b; --surface-2: #262a20; --ink: #eae7db;
+    --ink-soft: #bcbaa9; --ink-faint: #8b8b77; --line: #33372b; --line-strong: #454a3a;
+    --accent: #6bc7a3; --accent-soft: #7ed3b1; --accent-wash: #223229;
+    --amber: #d7ab5e; --amber-wash: #352c17; --blue: #8fc0e0; --blue-wash: #1c2c39;
+    --plum: #cd9bb6; --plum-wash: #2f2029;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px 72px; }
+
+  /* Header */
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(180deg, var(--accent-wash), transparent 70%);
+  }
+  .masthead-inner {
+    max-width: 1120px; margin: 0 auto; padding: 34px 20px 26px;
+    display: flex; flex-wrap: wrap; gap: 20px 32px;
+    align-items: flex-end; justify-content: space-between;
+  }
+  .brand-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent-soft); font-weight: 600; margin: 0 0 6px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600; font-size: clamp(28px, 4.4vw, 42px);
+    line-height: 1.04; margin: 0; letter-spacing: -.01em;
+    text-wrap: balance; color: var(--ink);
+  }
+  h1 .accent { color: var(--accent); }
+  .sub { margin: 10px 0 0; color: var(--ink-soft); max-width: 52ch; font-size: 15px; }
+  .meta-block {
+    text-align: right; font-size: 13px; color: var(--ink-faint);
+    display: flex; flex-direction: column; gap: 4px; min-width: 190px;
+  }
+  .meta-block .updated { color: var(--ink); font-weight: 600; font-size: 14px; }
+  .meta-block .cadence {
+    display: inline-flex; align-items: center; gap: 6px; align-self: flex-end;
+    background: var(--surface); border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: 4px 11px; color: var(--accent-soft); font-weight: 600;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-soft); }
+
+  /* Stats */
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px; margin: 26px 0 8px;
+  }
+  .stat {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 14px 16px;
+  }
+  .stat .n {
+    font-family: var(--serif); font-size: 30px; font-weight: 600;
+    color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .stat .l { font-size: 12px; color: var(--ink-faint); margin-top: 6px; letter-spacing: .02em; }
+
+  /* Controls */
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center;
+    margin: 28px 0 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line);
+  }
+  .filter-group { display: flex; flex-direction: column; gap: 7px; }
+  .filter-group .caption {
+    font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 600;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip-btn {
+    font-family: var(--sans); font-size: 13px; font-weight: 500;
+    padding: 6px 13px; border-radius: 999px; cursor: pointer;
+    background: var(--surface); color: var(--ink-soft);
+    border: 1px solid var(--line-strong); transition: all .15s ease;
+  }
+  .chip-btn:hover { border-color: var(--accent-soft); color: var(--ink); }
+  .chip-btn[aria-pressed="true"] {
+    background: var(--accent); border-color: var(--accent); color: #fff;
+  }
+  .chip-btn:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
+
+  /* Area section */
+  .area-block { margin-top: 30px; }
+  .area-head {
+    display: flex; align-items: baseline; gap: 12px; margin: 0 0 14px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--accent);
+  }
+  .area-head h2 {
+    font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; color: var(--ink);
+  }
+  .area-head .count { font-size: 13px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .area-head .postcode {
+    margin-left: auto; font-family: var(--mono); font-size: 12px;
+    color: var(--accent-soft); background: var(--accent-wash);
+    padding: 2px 9px; border-radius: 6px; letter-spacing: .03em;
+  }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 12px;
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  .card:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    padding: 3px 9px; border-radius: 6px; text-transform: uppercase;
+  }
+  .tag.sale { background: var(--amber-wash); color: var(--amber); }
+  .tag.let { background: var(--blue-wash); color: var(--blue); }
+  .tag.type { background: var(--surface-2); color: var(--ink-soft); }
+  .tag.freehold { background: var(--accent-wash); color: var(--accent-soft); }
+  .tag.leasehold { background: var(--plum-wash); color: var(--plum); }
+  .card h3 {
+    font-family: var(--serif); font-size: 18px; font-weight: 600; margin: 0; line-height: 1.2;
+    color: var(--ink); text-wrap: balance;
+  }
+  .price {
+    font-family: var(--mono); font-size: 17px; font-weight: 600;
+    color: var(--accent); font-variant-numeric: tabular-nums;
+  }
+  .price .per { font-size: 12px; color: var(--ink-faint); font-weight: 500; }
+  .card p.desc { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+  .specs { display: flex; flex-wrap: wrap; gap: 5px 14px; font-size: 12.5px; color: var(--ink-faint); }
+  .specs span strong { color: var(--ink-soft); font-weight: 600; }
+  .card-foot { margin-top: auto; padding-top: 4px; }
+  .src-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none;
+  }
+  .src-link:hover { text-decoration: underline; }
+  .src-link .arw { transition: transform .15s ease; }
+  .src-link:hover .arw { transform: translateX(3px); }
+  .src-link:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 3px; border-radius: 3px; }
+
+  .empty-note {
+    grid-column: 1 / -1; text-align: center; color: var(--ink-faint);
+    font-size: 14px; padding: 22px; border: 1px dashed var(--line-strong);
+    border-radius: var(--radius);
+  }
+
+  /* Saved searches */
+  .searches {
+    margin-top: 46px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 26px;
+  }
+  .searches h2 {
+    font-family: var(--serif); font-size: 22px; font-weight: 600; margin: 0 0 6px; color: var(--ink);
+  }
+  .searches .lede { margin: 0 0 20px; color: var(--ink-soft); font-size: 14px; max-width: 62ch; }
+  .search-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .search-col h4 {
+    font-size: 12px; letter-spacing: .11em; text-transform: uppercase; color: var(--accent-soft);
+    margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  }
+  .search-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .search-col a {
+    color: var(--ink-soft); text-decoration: none; font-size: 13.5px;
+    display: inline-flex; align-items: center; gap: 7px;
+  }
+  .search-col a:hover { color: var(--accent); }
+  .search-col a::before { content: "↳"; color: var(--ink-faint); }
+
+  /* Footer */
+  footer.notes {
+    margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink-faint); display: flex; flex-direction: column; gap: 10px;
+  }
+  footer.notes strong { color: var(--ink-soft); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+  .legend .tag { cursor: default; }
+
+  @media (max-width: 620px) {
+    .masthead-inner { flex-direction: column; align-items: flex-start; }
+    .meta-block { text-align: left; align-items: flex-start; }
+    .meta-block .cadence { align-self: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="brand-eyebrow">Site Acquisition · Central &amp; North-West London</p>
+      <h1>The <span class="accent">Pub Hunt</span> Tracker</h1>
+      <p class="sub">Licensed &amp; convertible premises across Marylebone, Fitzrovia, Notting Hill and Primrose Hill — freehold and leasehold, gathered from the specialist pub agents and the major portals.</p>
+    </div>
+    <div class="meta-block">
+      <span>Last refreshed</span>
+      <span class="updated">Mon 27 July 2026</span>
+      <span class="cadence"><span class="dot"></span> Auto-refresh · Mon &amp; Thu</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="stats" aria-label="Summary">
+    <div class="stat"><div class="n">8</div><div class="l">Live opportunities</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Target areas covered</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">True pubs / bars</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Convertible (E-class)</div></div>
+    <div class="stat"><div class="n">12</div><div class="l">Saved portal searches</div></div>
+  </section>
+
+  <div class="controls">
+    <div class="filter-group">
+      <span class="caption">Area</span>
+      <div class="chips" id="area-filters">
+        <button class="chip-btn" data-filter="area" data-value="all" aria-pressed="true">All</button>
+        <button class="chip-btn" data-filter="area" data-value="marylebone" aria-pressed="false">Marylebone</button>
+        <button class="chip-btn" data-filter="area" data-value="fitzrovia" aria-pressed="false">Fitzrovia</button>
+        <button class="chip-btn" data-filter="area" data-value="notting-hill" aria-pressed="false">Notting Hill</button>
+        <button class="chip-btn" data-filter="area" data-value="primrose-hill" aria-pressed="false">Primrose Hill</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="caption">Status</span>
+      <div class="chips" id="status-filters">
+        <button class="chip-btn" data-filter="status" data-value="all" aria-pressed="true">All</button>
+        <button class="chip-btn" data-filter="status" data-value="sale" aria-pressed="false">For sale</button>
+        <button class="chip-btn" data-filter="status" data-value="let" aria-pressed="false">To let</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="listings">
+
+    <!-- MARYLEBONE -->
+    <section class="area-block" data-area="marylebone">
+      <div class="area-head">
+        <h2>Marylebone</h2>
+        <span class="count">3 listings</span>
+        <span class="postcode">W1U · W1H · NW1</span>
+      </div>
+      <div class="grid">
+
+        <article class="card" data-area="marylebone" data-status="let">
+          <div class="card-tags">
+            <span class="tag let">To let</span>
+            <span class="tag leasehold">Leasehold</span>
+            <span class="tag type">Pub</span>
+          </div>
+          <h3>Pub lease, Marylebone</h3>
+          <div class="price">£48,000 <span class="per">/ yr</span></div>
+          <p class="desc">Assignment of a 5-year lease (from Jan 2020), inside the 1954 Act with 5-yearly rent reviews. Established pub in a boutique-lined stretch of Marylebone village.</p>
+          <div class="specs">
+            <span><strong>Rates:</strong> £12,275 pa</span>
+            <span><strong>Tenure:</strong> Assignment</span>
+            <span><strong>W1H</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.onthemarket.com/details/9537554/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <article class="card" data-area="marylebone" data-status="sale">
+          <div class="card-tags">
+            <span class="tag sale">For sale</span>
+            <span class="tag type">Restaurant</span>
+          </div>
+          <h3>Dorset Street, W1U</h3>
+          <div class="price">£395,000</div>
+          <p class="desc">Restaurant premises for sale in prime Marylebone village — a strong candidate for conversion to a bar/gastropub use, subject to licensing.</p>
+          <div class="specs">
+            <span><strong>Use:</strong> Class E</span>
+            <span><strong>W1U</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.zoopla.co.uk/for-sale/commercial/details/71585353/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <article class="card" data-area="marylebone" data-status="let">
+          <div class="card-tags">
+            <span class="tag let">To let</span>
+            <span class="tag type">Restaurant / Bar</span>
+          </div>
+          <h3>Old Marylebone Road, NW1</h3>
+          <div class="price">£84,000 <span class="per">/ yr</span></div>
+          <p class="desc">Restaurant unit to let on the Marylebone/Marylebone Road fringe — larger footprint suited to a food-led bar or brewpub format.</p>
+          <div class="specs">
+            <span><strong>Use:</strong> Class E</span>
+            <span><strong>NW1</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.zoopla.co.uk/to-rent/commercial/details/68342914/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FITZROVIA -->
+    <section class="area-block" data-area="fitzrovia">
+      <div class="area-head">
+        <h2>Fitzrovia</h2>
+        <span class="count">1 listing</span>
+        <span class="postcode">W1T</span>
+      </div>
+      <div class="grid">
+
+        <article class="card" data-area="fitzrovia" data-status="let">
+          <div class="card-tags">
+            <span class="tag let">To let</span>
+            <span class="tag type">Bar + Restaurant</span>
+          </div>
+          <h3>Whitfield Street, W1T</h3>
+          <div class="price">£229,000 <span class="per">/ yr (£19,083 pcm)</span></div>
+          <p class="desc">Rare six-storey building: fully fitted restaurant &amp; cocktail bar with 150+ covers, commercial kitchen, plus four 2-bed apartments above (currently staff accommodation) with a separate entrance.</p>
+          <div class="specs">
+            <span><strong>Size:</strong> 5,841 sq ft</span>
+            <span><strong>Covers:</strong> 150+</span>
+            <span><strong>W1T</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.onthemarket.com/details/9824018/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NOTTING HILL -->
+    <section class="area-block" data-area="notting-hill">
+      <div class="area-head">
+        <h2>Notting Hill</h2>
+        <span class="count">1 listing</span>
+        <span class="postcode">W11</span>
+      </div>
+      <div class="grid">
+
+        <article class="card" data-area="notting-hill" data-status="sale">
+          <div class="card-tags">
+            <span class="tag sale">For sale</span>
+            <span class="tag freehold">Freehold</span>
+            <span class="tag type">Hospitality</span>
+          </div>
+          <h3>Freehold corner building, near Holland Park</h3>
+          <div class="price">POA</div>
+          <p class="desc">Substantial freehold hospitality-led corner building in a prominent, affluent W11 position with significant value-add potential — a rare freehold opportunity in Notting Hill.</p>
+          <div class="specs">
+            <span><strong>Tenure:</strong> Freehold</span>
+            <span><strong>W11</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.rightmove.co.uk/commercial-property-for-sale/Notting-Hill.html" target="_blank" rel="noopener">Rightmove <span class="arw">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PRIMROSE HILL -->
+    <section class="area-block" data-area="primrose-hill">
+      <div class="area-head">
+        <h2>Primrose Hill</h2>
+        <span class="count">2 listings</span>
+        <span class="postcode">NW1</span>
+      </div>
+      <div class="grid">
+
+        <article class="card" data-area="primrose-hill" data-status="let">
+          <div class="card-tags">
+            <span class="tag let">To let</span>
+            <span class="tag type">Restaurant / Bar</span>
+          </div>
+          <h3>Chalk Farm Road, NW1</h3>
+          <div class="price">£50,000 <span class="per">/ yr</span></div>
+          <p class="desc">Prime restaurant/bar unit with a rare roof terrace, on the Primrose Hill / Camden border — well suited to a bar or gastropub with al-fresco trade.</p>
+          <div class="specs">
+            <span><strong>Ground:</strong> 1,040 sq ft</span>
+            <span><strong>Terrace:</strong> 730 sq ft</span>
+            <span><strong>NW1</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.rightmove.co.uk/commercial-property-to-let/Primrose-Hill.html" target="_blank" rel="noopener">Rightmove <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <article class="card" data-area="primrose-hill" data-status="let">
+          <div class="card-tags">
+            <span class="tag let">To let</span>
+            <span class="tag type">Commercial</span>
+          </div>
+          <h3>42 Gloucester Avenue, NW1 8JD</h3>
+          <div class="price">POA</div>
+          <p class="desc">"Primrose Hill Works" — commercial premises in the heart of Primrose Hill village, near the Gloucester Avenue pub cluster. Worth a look for licensing potential.</p>
+          <div class="specs">
+            <span><strong>Village core</strong></span>
+            <span><strong>NW1 8JD</strong></span>
+          </div>
+          <div class="card-foot">
+            <a class="src-link" href="https://www.onthemarket.com/for-sale/commercial/property/primrose-hill/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <p class="empty-note" id="empty-note" hidden>No listings match these filters right now. Widen the filter, or check the saved searches below for the freshest stock.</p>
+
+  </div>
+
+  <!-- SAVED SEARCHES -->
+  <section class="searches">
+    <h2>Saved searches — go straight to source</h2>
+    <p class="lede">The portals update constantly. These pre-built links drop you into a live, filtered list for each source so you can scan between refreshes. The specialist pub agents (Christie &amp; Co, Fleurets) usually get the best stock first.</p>
+    <div class="search-grid">
+
+      <div class="search-col">
+        <h4>Specialist pub agents</h4>
+        <ul>
+          <li><a href="https://www.christie.com/pubs-for-sale/london/" target="_blank" rel="noopener">Christie &amp; Co — London pubs</a></li>
+          <li><a href="https://www.fleurets.com/properties/pubs-and-bars.html" target="_blank" rel="noopener">Fleurets — pubs &amp; bars</a></li>
+          <li><a href="https://www.agg.uk.com/property-search/" target="_blank" rel="noopener">AG&amp;G — licensed &amp; leisure</a></li>
+        </ul>
+      </div>
+
+      <div class="search-col">
+        <h4>Rightmove — pubs</h4>
+        <ul>
+          <li><a href="https://www.rightmove.co.uk/commercial-property-for-sale/Marylebone/pubs.html" target="_blank" rel="noopener">Marylebone — for sale</a></li>
+          <li><a href="https://www.rightmove.co.uk/commercial-property-for-sale/Fitzrovia/pubs.html" target="_blank" rel="noopener">Fitzrovia — for sale</a></li>
+          <li><a href="https://www.rightmove.co.uk/commercial-property-for-sale/Notting-Hill/pubs.html" target="_blank" rel="noopener">Notting Hill — for sale</a></li>
+          <li><a href="https://www.rightmove.co.uk/commercial-property-to-let/London/pubs.html" target="_blank" rel="noopener">London — pubs to let</a></li>
+        </ul>
+      </div>
+
+      <div class="search-col">
+        <h4>Zoopla — hospitality</h4>
+        <ul>
+          <li><a href="https://www.zoopla.co.uk/for-sale/commercial/hospitality/marylebone/" target="_blank" rel="noopener">Marylebone — for sale</a></li>
+          <li><a href="https://www.zoopla.co.uk/for-sale/commercial/hospitality/fitzrovia/" target="_blank" rel="noopener">Fitzrovia — for sale</a></li>
+          <li><a href="https://www.zoopla.co.uk/to-rent/commercial/hospitality/notting-hill/" target="_blank" rel="noopener">Notting Hill — to rent</a></li>
+          <li><a href="https://www.zoopla.co.uk/to-rent/commercial/property/london/primrose-hill/" target="_blank" rel="noopener">Primrose Hill — to rent</a></li>
+        </ul>
+      </div>
+
+      <div class="search-col">
+        <h4>OnTheMarket</h4>
+        <ul>
+          <li><a href="https://www.onthemarket.com/for-sale/commercial/property/marylebone/" target="_blank" rel="noopener">Marylebone — for sale</a></li>
+          <li><a href="https://www.onthemarket.com/for-sale/commercial/property/notting-hill/" target="_blank" rel="noopener">Notting Hill — for sale</a></li>
+          <li><a href="https://www.onthemarket.com/for-sale/commercial/property/primrose-hill/" target="_blank" rel="noopener">Primrose Hill — for sale</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="notes">
+    <div class="legend">
+      <strong>Legend:</strong>
+      <span class="tag sale">For sale</span>
+      <span class="tag let">To let</span>
+      <span class="tag freehold">Freehold</span>
+      <span class="tag leasehold">Leasehold</span>
+      <span class="tag type">Use class</span>
+    </div>
+    <p><strong>How this works:</strong> Listings are gathered from the specialist pub agents and the major commercial portals, filtered to the four target areas, and de-duplicated. "True pub / bar" means already licensed; "convertible" means a Class E (restaurant/retail) unit that could take a licence — flagged because good pub sites in these areas often come to market as restaurants first.</p>
+    <p><strong>Refresh cadence:</strong> Twice weekly (Monday &amp; Thursday). Prices and availability change fast — always confirm the current position with the agent on the source link before acting. POA = price on application.</p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var state = { area: "all", status: "all" };
+    var buttons = document.querySelectorAll(".chip-btn");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+    var blocks = Array.prototype.slice.call(document.querySelectorAll(".area-block"));
+    var emptyNote = document.getElementById("empty-note");
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var dim = btn.getAttribute("data-filter");
+        var val = btn.getAttribute("data-value");
+        state[dim] = val;
+        document.querySelectorAll('.chip-btn[data-filter="' + dim + '"]').forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+        apply();
+      });
+    });
+
+    function apply() {
+      var anyVisible = false;
+      cards.forEach(function (card) {
+        var okArea = state.area === "all" || card.getAttribute("data-area") === state.area;
+        var okStatus = state.status === "all" || card.getAttribute("data-status") === state.status;
+        var show = okArea && okStatus;
+        card.style.display = show ? "" : "none";
+        if (show) anyVisible = true;
+      });
+      blocks.forEach(function (block) {
+        var visibleCards = block.querySelectorAll('.card:not([style*="display: none"])');
+        block.style.display = visibleCards.length ? "" : "none";
+      });
+      emptyNote.hidden = anyVisible;
+    }
+  })();
+</script>
+</body>
+</html>
