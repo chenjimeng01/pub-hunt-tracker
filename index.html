@@ -203,7 +203,22 @@
   .card p.desc { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
   .specs { display: flex; flex-wrap: wrap; gap: 5px 14px; font-size: 12.5px; color: var(--ink-faint); }
   .specs span strong { color: var(--ink-soft); font-weight: 600; }
-  .card-foot { margin-top: auto; padding-top: 4px; }
+  .card-foot {
+    margin-top: auto; padding-top: 4px;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  }
+  .v-ok { color: var(--accent-soft); font-weight: 600; }
+  .pd-btn {
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
+    color: var(--accent); background: var(--accent-wash);
+    border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: 5px 12px; cursor: pointer; white-space: nowrap;
+    transition: border-color .15s ease;
+  }
+  .pd-btn:hover { border-color: var(--accent-soft); }
+  .pd-btn:disabled { opacity: .55; cursor: default; }
+  .pd-btn:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
+  .vitals .v-err { color: var(--amber); font-size: 12.5px; }
   .src-link {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none;
@@ -296,7 +311,7 @@
     </div>
     <div class="meta-block">
       <span>Last refreshed</span>
-      <span class="updated">Mon 27 July 2026</span>
+      <span class="updated">Tue 28 July 2026</span>
       <span class="cadence"><span class="dot"></span> Auto-refresh · Mon &amp; Thu</span>
     </div>
   </div>
@@ -305,10 +320,10 @@
 <div class="wrap">
 
   <section class="stats" aria-label="Summary">
-    <div class="stat"><div class="n">10</div><div class="l">Live opportunities</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Verified live listings</div></div>
     <div class="stat"><div class="n">4</div><div class="l">Target areas covered</div></div>
-    <div class="stat"><div class="n">3</div><div class="l">True pubs / bars</div></div>
-    <div class="stat"><div class="n">7</div><div class="l">Convertible (E-class)</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">True pubs / bars</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Convertible (E-class)</div></div>
     <div class="stat"><div class="n">12</div><div class="l">Saved portal searches</div></div>
   </section>
 
@@ -339,7 +354,7 @@
     <section class="area-block" data-area="marylebone">
       <div class="area-head">
         <h2>Marylebone</h2>
-        <span class="count">4 listings</span>
+        <span class="count">2 listings</span>
         <span class="postcode">W1U · W1H · NW1</span>
       </div>
       <div class="area-vitals">
@@ -352,82 +367,44 @@
       </div>
       <div class="grid">
 
-        <article class="card" data-area="marylebone" data-status="sale">
+        <article class="card" data-area="marylebone" data-status="sale" data-pc="NW1">
           <div class="card-tags">
             <span class="tag" style="background:var(--accent);color:#fff">New</span>
             <span class="tag sale">For sale</span>
-            <span class="tag freehold">Freehold</span>
-            <span class="tag type">Pub</span>
-          </div>
-          <h3>The Harcourt, 32 Harcourt Street</h3>
-          <div class="price">£2,250,000+</div>
-          <p class="desc">Prime Grade II listed freehold public house in the heart of Marylebone, sold as an operational business (staff transfer under TUPE). Prominent corner position at the York Street junction, within the Portman Estate Conservation Area. Offers in excess of £2.25m plus VAT, via Savills Licensed Leisure.</p>
-          <div class="specs">
-            <span><strong>Tenure:</strong> Freehold</span>
-            <span><strong>Grade II listed</strong></span>
-            <span><strong>W1H 4HX</strong></span>
-          </div>
-          <div class="vitals">
-            <span class="v-src">PropertyData checks · 27 Jul 2026</span>
-            <span class="v-row">✓ Verified <a href="https://historicengland.org.uk/listing/the-list/list-entry/1357078" target="_blank" rel="noopener"><strong>Grade II listed</strong></a> ("Harcourt Arms") — <span class="v-flag">listed-building consent needed for refit &amp; signage</span></span>
-            <span class="v-row">✓ Verified <strong>Portman Estate conservation area</strong> — external alterations constrained</span>
-            <span class="v-row">Nearby planning: residential conversions on York St — check noise-condition precedents before offer</span>
-          </div>
-          <div class="card-foot">
-            <a class="src-link" href="https://www.rightmove.co.uk/properties/129134873" target="_blank" rel="noopener">Rightmove <span class="arw">→</span></a>
-          </div>
-        </article>
-
-        <article class="card" data-area="marylebone" data-status="let">
-          <div class="card-tags">
-            <span class="tag let">To let</span>
             <span class="tag leasehold">Leasehold</span>
-            <span class="tag type">Pub</span>
+            <span class="tag type">Pub / Bar</span>
           </div>
-          <h3>Pub lease, Marylebone</h3>
-          <div class="price">£48,000 <span class="per">/ yr</span></div>
-          <p class="desc">Assignment of a 5-year lease (from Jan 2020), inside the 1954 Act with 5-yearly rent reviews. Established pub in a boutique-lined stretch of Marylebone village.</p>
+          <h3>Daventry Street, NW1</h3>
+          <div class="price">£150,000 <span class="per">leasehold + SAV</span></div>
+          <p class="desc">Three-storey corner-plot pub/bar, 4,500 sq ft: ground-floor bar, large basement, and 11 letting rooms above (98 short-stay beds) — boutique-hotel potential (STPP). Price includes goodwill, fixtures &amp; fittings. Via Sidney Phillips.</p>
           <div class="specs">
-            <span><strong>Rates:</strong> £12,275 pa</span>
-            <span><strong>Tenure:</strong> Assignment</span>
-            <span><strong>W1H</strong></span>
+            <span><strong>Size:</strong> 4,500 sq ft</span>
+            <span><strong>NW1</strong></span>
+            <span class="v-ok">✓ Listing verified live 28 Jul</span>
           </div>
           <div class="card-foot">
-            <a class="src-link" href="https://www.onthemarket.com/details/9537554/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
+            <a class="src-link" href="https://www.zoopla.co.uk/for-sale/commercial/details/73755611/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
+            <button class="pd-btn" type="button">PropertyData check</button>
           </div>
         </article>
 
-        <article class="card" data-area="marylebone" data-status="sale">
-          <div class="card-tags">
-            <span class="tag sale">For sale</span>
-            <span class="tag type">Restaurant</span>
-          </div>
-          <h3>Dorset Street, W1U</h3>
-          <div class="price">£395,000</div>
-          <p class="desc">Restaurant premises for sale in prime Marylebone village — a strong candidate for conversion to a bar/gastropub use, subject to licensing.</p>
-          <div class="specs">
-            <span><strong>Use:</strong> Class E</span>
-            <span><strong>W1U</strong></span>
-          </div>
-          <div class="card-foot">
-            <a class="src-link" href="https://www.zoopla.co.uk/for-sale/commercial/details/71585353/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
-          </div>
-        </article>
-
-        <article class="card" data-area="marylebone" data-status="let">
+        <article class="card" data-area="marylebone" data-status="let" data-pc="NW1">
           <div class="card-tags">
             <span class="tag let">To let</span>
-            <span class="tag type">Restaurant / Bar</span>
+            <span class="tag type">Restaurant</span>
           </div>
           <h3>Old Marylebone Road, NW1</h3>
           <div class="price">£84,000 <span class="per">/ yr</span></div>
-          <p class="desc">Restaurant unit to let on the Marylebone/Marylebone Road fringe — larger footprint suited to a food-led bar or brewpub format.</p>
+          <p class="desc">Fully fitted 1,500 sq ft ground-floor restaurant, Class E/A3, available immediately. Sole agents Next Property Commercial. A food-led bar conversion candidate on the Marylebone fringe.</p>
           <div class="specs">
-            <span><strong>Use:</strong> Class E</span>
+            <span><strong>Size:</strong> 1,500 sq ft</span>
+            <span><strong>Use:</strong> Class E / A3</span>
             <span><strong>NW1</strong></span>
+            <span class="v-ok">✓ Listing verified live 28 Jul</span>
           </div>
           <div class="card-foot">
             <a class="src-link" href="https://www.zoopla.co.uk/to-rent/commercial/details/68342914/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
+            <button class="pd-btn" type="button">PropertyData check</button>
           </div>
         </article>
 
@@ -438,48 +415,11 @@
     <section class="area-block" data-area="fitzrovia">
       <div class="area-head">
         <h2>Fitzrovia</h2>
-        <span class="count">2 listings</span>
-        <span class="postcode">W1T</span>
+        <span class="count">0 listings</span>
+        <span class="postcode">W1T · W1W</span>
       </div>
       <div class="grid">
-
-        <article class="card" data-area="fitzrovia" data-status="let">
-          <div class="card-tags">
-            <span class="tag" style="background:var(--accent);color:#fff">New</span>
-            <span class="tag let">To let</span>
-            <span class="tag type">Restaurant</span>
-          </div>
-          <h3>Charlotte Street, W1T</h3>
-          <div class="price">£58,500 <span class="per">/ yr (£4,875 pcm)</span></div>
-          <p class="desc">A3 restaurant premises over ground and basement on Charlotte Street — Fitzrovia's restaurant row. Approx 1,050 sq ft in all; a natural candidate for a bar-led conversion, subject to licensing.</p>
-          <div class="specs">
-            <span><strong>Size:</strong> ~1,050 sq ft</span>
-            <span><strong>Use:</strong> A3 / Class E</span>
-            <span><strong>W1T</strong></span>
-          </div>
-          <div class="card-foot">
-            <a class="src-link" href="https://www.onthemarket.com/details/9693080/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
-          </div>
-        </article>
-
-        <article class="card" data-area="fitzrovia" data-status="let">
-          <div class="card-tags">
-            <span class="tag let">To let</span>
-            <span class="tag type">Bar + Restaurant</span>
-          </div>
-          <h3>Whitfield Street, W1T</h3>
-          <div class="price">£229,000 <span class="per">/ yr (£19,083 pcm)</span></div>
-          <p class="desc">Rare six-storey building: fully fitted restaurant &amp; cocktail bar with 150+ covers, commercial kitchen, plus four 2-bed apartments above (currently staff accommodation) with a separate entrance.</p>
-          <div class="specs">
-            <span><strong>Size:</strong> 5,841 sq ft</span>
-            <span><strong>Covers:</strong> 150+</span>
-            <span><strong>W1T</strong></span>
-          </div>
-          <div class="card-foot">
-            <a class="src-link" href="https://www.onthemarket.com/details/9824018/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
-          </div>
-        </article>
-
+        <p class="empty-note">No verified live hospitality listings in Fitzrovia proper right now (the Whitfield St cocktail-bar building went to "let agreed"). Nearby Soho/W1D stock exists but is outside the target areas — check the saved searches below for movement.</p>
       </div>
     </section>
 
@@ -487,45 +427,28 @@
     <section class="area-block" data-area="notting-hill">
       <div class="area-head">
         <h2>Notting Hill</h2>
-        <span class="count">2 listings</span>
-        <span class="postcode">W11 · W2</span>
+        <span class="count">1 listing</span>
+        <span class="postcode">W11 · W2 · W8</span>
       </div>
       <div class="grid">
 
-        <article class="card" data-area="notting-hill" data-status="let">
+        <article class="card" data-area="notting-hill" data-status="let" data-pc="W11">
           <div class="card-tags">
             <span class="tag" style="background:var(--accent);color:#fff">New</span>
             <span class="tag let">To let</span>
             <span class="tag type">Restaurant</span>
           </div>
-          <h3>Westbourne Grove, W2</h3>
-          <div class="price">£80,000 <span class="per">/ yr</span></div>
-          <p class="desc">Open-plan restaurant premises over two near-identical floors on the prestigious southern side of Westbourne Grove, a short walk from Royal Oak station. Generous 3,172 sq ft footprint suited to a bar/dining format, via Hausit.</p>
+          <h3>Pembridge Road, W11</h3>
+          <div class="price">£100,000 <span class="per">/ yr (£94/sq ft)</span></div>
+          <p class="desc">Prime 1,064 sq ft restaurant (639 ground + 425 basement) on the main pedestrian route from Notting Hill Gate tube to Portobello Road — exceptionally heavy footfall. Available immediately, furnished. Via LT Property Consultancy.</p>
           <div class="specs">
-            <span><strong>Ground:</strong> 1,477 sq ft</span>
-            <span><strong>Basement:</strong> 1,695 sq ft</span>
-            <span><strong>W2</strong></span>
-          </div>
-          <div class="card-foot">
-            <a class="src-link" href="https://www.zoopla.co.uk/to-rent/commercial/details/70393281/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
-          </div>
-        </article>
-
-        <article class="card" data-area="notting-hill" data-status="sale">
-          <div class="card-tags">
-            <span class="tag sale">For sale</span>
-            <span class="tag freehold">Freehold</span>
-            <span class="tag type">Hospitality</span>
-          </div>
-          <h3>Freehold corner building, near Holland Park</h3>
-          <div class="price">POA</div>
-          <p class="desc">Substantial freehold hospitality-led corner building in a prominent, affluent W11 position with significant value-add potential — a rare freehold opportunity in Notting Hill.</p>
-          <div class="specs">
-            <span><strong>Tenure:</strong> Freehold</span>
+            <span><strong>Size:</strong> 1,064 sq ft</span>
             <span><strong>W11</strong></span>
+            <span class="v-ok">✓ Listing verified live 28 Jul</span>
           </div>
           <div class="card-foot">
-            <a class="src-link" href="https://www.rightmove.co.uk/commercial-property-for-sale/Notting-Hill.html" target="_blank" rel="noopener">Rightmove <span class="arw">→</span></a>
+            <a class="src-link" href="https://www.zoopla.co.uk/to-rent/commercial/details/71819859/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
+            <button class="pd-btn" type="button">PropertyData check</button>
           </div>
         </article>
 
@@ -536,43 +459,28 @@
     <section class="area-block" data-area="primrose-hill">
       <div class="area-head">
         <h2>Primrose Hill</h2>
-        <span class="count">2 listings</span>
-        <span class="postcode">NW1</span>
+        <span class="count">1 listing</span>
+        <span class="postcode">NW1 · NW3</span>
       </div>
       <div class="grid">
 
-        <article class="card" data-area="primrose-hill" data-status="let">
+        <article class="card" data-area="primrose-hill" data-status="let" data-pc="NW1">
           <div class="card-tags">
             <span class="tag let">To let</span>
             <span class="tag type">Restaurant / Bar</span>
           </div>
-          <h3>Chalk Farm Road, NW1</h3>
+          <h3>61 Chalk Farm Road, NW1</h3>
           <div class="price">£50,000 <span class="per">/ yr</span></div>
-          <p class="desc">Prime restaurant/bar unit with a rare roof terrace, on the Primrose Hill / Camden border — well suited to a bar or gastropub with al-fresco trade.</p>
+          <p class="desc">Class E unit on a new lease: 1,040 sq ft plus a 730 sq ft roof terrace by Primrose Hill (terrace in use 30+ years with full planning permission). Opposite Camden Market, 5 min from Chalk Farm tube. Via Jarvis Keller.</p>
           <div class="specs">
             <span><strong>Ground:</strong> 1,040 sq ft</span>
             <span><strong>Terrace:</strong> 730 sq ft</span>
             <span><strong>NW1</strong></span>
+            <span class="v-ok">✓ Listing verified live 28 Jul</span>
           </div>
           <div class="card-foot">
-            <a class="src-link" href="https://www.rightmove.co.uk/commercial-property-to-let/Primrose-Hill.html" target="_blank" rel="noopener">Rightmove <span class="arw">→</span></a>
-          </div>
-        </article>
-
-        <article class="card" data-area="primrose-hill" data-status="let">
-          <div class="card-tags">
-            <span class="tag let">To let</span>
-            <span class="tag type">Commercial</span>
-          </div>
-          <h3>42 Gloucester Avenue, NW1 8JD</h3>
-          <div class="price">POA</div>
-          <p class="desc">"Primrose Hill Works" — commercial premises in the heart of Primrose Hill village, near the Gloucester Avenue pub cluster. Worth a look for licensing potential.</p>
-          <div class="specs">
-            <span><strong>Village core</strong></span>
-            <span><strong>NW1 8JD</strong></span>
-          </div>
-          <div class="card-foot">
-            <a class="src-link" href="https://www.onthemarket.com/for-sale/commercial/property/primrose-hill/" target="_blank" rel="noopener">OnTheMarket <span class="arw">→</span></a>
+            <a class="src-link" href="https://www.zoopla.co.uk/to-rent/commercial/details/71624714/" target="_blank" rel="noopener">Zoopla <span class="arw">→</span></a>
+            <button class="pd-btn" type="button">PropertyData check</button>
           </div>
         </article>
 
@@ -680,6 +588,102 @@
       });
       emptyNote.hidden = anyVisible;
     }
+  })();
+
+  // On-demand PropertyData checks via Supabase edge function.
+  // The PropertyData API key stays server-side; the anon key below is a
+  // publishable client key by design. Results are cached 30 days server-side
+  // and a daily credit cap applies across all visitors.
+  (function () {
+    var FN_URL = "https://iwhraufuotdwnsltuxfn.supabase.co/functions/v1/pubhunt-propertydata";
+    var ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3aHJhdWZ1b3Rkd25zbHR1eGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxOTEwOTUsImV4cCI6MjA5OTc2NzA5NX0.6jzx091FRREgis8W-xoMFkpxJ5iWcwIqWed0yM-Usek";
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function render(card, data) {
+      var old = card.querySelector(".vitals[data-dynamic]");
+      if (old) old.remove();
+      var v = el("div", "vitals");
+      v.setAttribute("data-dynamic", "1");
+      var when = new Date(data.fetched_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+      v.appendChild(el("span", "v-src", "PropertyData · " + data.postcode + " · " + when + (data.cached ? " (cached)" : "")));
+      var r = data.results || {};
+      if (data.type === "full") {
+        if (r.conservation && !r.conservation.error) {
+          v.appendChild(el("span", "v-row", r.conservation.in_area
+            ? "Conservation area: " + (r.conservation.name || "yes") + " — external alterations constrained"
+            : "Not in a conservation area"));
+        }
+        if (Array.isArray(r.listed)) {
+          if (r.listed.length) {
+            var here = r.listed[0];
+            var row = el("span", "v-row");
+            row.appendChild(document.createTextNode("Nearest listed building: "));
+            var a = el("a", null, here.name + " (Grade " + here.grade + ", " + here.distance + " mi)");
+            a.href = here.url; a.target = "_blank"; a.rel = "noopener";
+            row.appendChild(a);
+            v.appendChild(row);
+          } else {
+            v.appendChild(el("span", "v-row", "No listed buildings at this postcode"));
+          }
+        }
+        if (r.planning && !r.planning.error) {
+          v.appendChild(el("span", "v-row", "Planning applications nearby: " + r.planning.count +
+            (r.planning.recent && r.planning.recent.length ? " — latest: " + r.planning.recent[0].proposal : "")));
+        }
+      } else {
+        if (r.crime && !r.crime.error) {
+          v.appendChild(el("span", "v-row", "Crime (" + data.postcode + "): " + r.crime.rating + ", " +
+            r.crime.per_thousand + "/1,000 — top: " + (r.crime.top_types || []).join(", ")));
+        }
+        if (r.demographics && !r.demographics.error) {
+          var d = r.demographics;
+          v.appendChild(el("span", "v-row", "Residents aged 20–34: " + d.aged_20_34_pct + "% · top social grades: " +
+            d.top_social_grades_pct + "% · deprivation score: " + d.deprivation + " (lower = less deprived)"));
+        }
+        v.appendChild(el("span", "v-row", "District-level data (full postcode not published in listing)"));
+      }
+      card.insertBefore(v, card.querySelector(".card-foot"));
+    }
+
+    document.querySelectorAll(".card[data-pc] .pd-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var card = btn.closest(".card");
+        btn.disabled = true;
+        btn.textContent = "Checking…";
+        fetch(FN_URL, {
+          method: "POST",
+          headers: {
+            "Authorization": "Bearer " + ANON,
+            "apikey": ANON,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ postcode: card.getAttribute("data-pc") })
+        })
+          .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j }; }); })
+          .then(function (r) {
+            if (!r.ok || r.j.error) throw new Error(r.j.error || "Lookup failed");
+            render(card, r.j);
+            btn.textContent = "Re-check";
+            btn.disabled = false;
+          })
+          .catch(function (e) {
+            var old = card.querySelector(".vitals[data-dynamic]");
+            if (old) old.remove();
+            var v = el("div", "vitals");
+            v.setAttribute("data-dynamic", "1");
+            v.appendChild(el("span", "v-err", "Check failed: " + e.message));
+            card.insertBefore(v, card.querySelector(".card-foot"));
+            btn.textContent = "PropertyData check";
+            btn.disabled = false;
+          });
+      });
+    });
   })();
 </script>
 </body>

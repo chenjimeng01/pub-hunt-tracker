@@ -28,9 +28,28 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    freehold/leasehold if stated, price or annual rent, size/covers, a one-line
    description, and the **direct source URL**.
 
-2. **Dedupe** against the cards already in `index.html` (match on address + source).
+2. **VERIFY EVERY LISTING — the most important stage.** Search-engine snippets lag
+   the market by weeks; never trust them. For EVERY candidate (new finds AND every
+   card already on the tracker), fetch its detail-page URL this run and check:
+   - HTTP 404/410, or a redirect to a search-results page → **dead, exclude/remove**
+   - Page says "no longer on the market", "let agreed", "sold", "under offer" → **exclude/remove**
+   - Only a page that renders the specific property with an asking price/rent and
+     no removed/agreed marker counts as live.
 
-3. **Edit `index.html`** — listing cards only. Do not touch the CSS, palette,
+   Card source links must be **direct detail pages only** (e.g.
+   `zoopla.co.uk/.../details/NNNN/`, `rightmove.co.uk/properties/NNNN`) — NEVER a
+   search-results URL. Every live card gets a dated verification line in `.specs`:
+   `<span class="v-ok">✓ Listing verified live 30 Jul</span>` (update the date each
+   run it re-verifies).
+
+   Tip: Zoopla search pages render server-side — enumerate them for candidate
+   detail URLs, then verify each detail page individually. An area with zero
+   verified listings keeps its section with an honest `.empty-note` explaining
+   what happened (see Fitzrovia).
+
+3. **Dedupe** against the cards already in `index.html` (match on address + source).
+
+4. **Edit `index.html`** — listing cards only. Do not touch the CSS, palette,
    typography, layout, Saved Searches section, or footer. Per card, match the
    existing markup exactly: `.card` with `data-area` / `data-status` attributes,
    `.card-tags` (`.tag` classes: `sale` / `let` / `freehold` / `leasehold` / `type`),
@@ -42,7 +61,13 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    - Update the masthead "Last refreshed" date (`Thu 30 July 2026` format),
      the summary stat numbers, and each area section's `.count`.
 
-4. **PropertyData enrichment — MARYLEBONE LISTINGS ONLY** (user instruction: do not
+   Every card also carries `data-pc="<postcode>"` on its `<article>` (full postcode
+   if the listing publishes one, else the district) and this button as the last
+   child of `.card-foot`: `<button class="pd-btn" type="button">PropertyData check</button>`
+   — it powers the on-demand PropertyData lookup (Supabase edge function
+   `pubhunt-propertydata`; the page JS handles the rest, do not modify it).
+
+5. **PropertyData enrichment — MARYLEBONE LISTINGS ONLY** (user instruction: do not
    spend credits on other areas). Requires the API key in env var
    `PROPERTYDATA_API_KEY` (locally: `.env`, git-ignored — **NEVER commit the key**;
    if the env var is absent, skip this step entirely and leave existing vitals as-is).
@@ -66,7 +91,7 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    demographics, restaurants — district level; refresh at most monthly).
    Only report values the API actually returned — never invent figures.
 
-5. **Commit and push** to `main` with message `refresh: <date> — N listings, M new`.
+6. **Commit and push** to `main` with message `refresh: <date> — N listings, M new`.
 
 ### Hard rules
 
