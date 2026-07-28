@@ -9,7 +9,10 @@
   "pub_name": "Bourne & Hollingsworth",
   "address": "28 Rathbone Place",
   "postcode": "W1T 1JF",
-  "area": "fitzrovia"
+  "area": "fitzrovia",
+  "company_number": "08471250",
+  "company_name": "BOURNE & HOLLINGSWORTH BAR LTD",
+  "match_basis": "registered office = premises postcode"
  },
  {
   "pub_name": "Dominion Theatre",
@@ -135,13 +138,19 @@
   "pub_name": "Camden Eye",
   "address": "2 Kentish Town Road",
   "postcode": "NW1 9NX",
-  "area": "primrose-hill"
+  "area": "primrose-hill",
+  "company_number": "12027725",
+  "company_name": "CAMDEN EYE BAR AND RESTAURANT LIMITED",
+  "match_basis": "registered office = premises postcode"
  },
  {
   "pub_name": "Camden People's Theatre",
   "address": "58-60 Hampstead Road",
   "postcode": "NW1 2PY",
-  "area": "primrose-hill"
+  "area": "primrose-hill",
+  "company_number": "03256616",
+  "company_name": "CAMDEN PEOPLE'S THEATRE",
+  "match_basis": "registered office = premises postcode"
  },
  {
   "pub_name": "Camden Road Arms",
