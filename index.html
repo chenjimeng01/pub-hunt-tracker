@@ -219,6 +219,24 @@
   .pd-btn:disabled { opacity: .55; cursor: default; }
   .pd-btn:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
   .v-err { color: var(--amber); font-size: 12.5px; }
+
+  /* Off-market signals */
+  .sig-loading { color: var(--ink-faint); font-size: 13px; margin: 0; }
+  .sig-area { margin-top: 14px; }
+  .sig-area h4 {
+    font-size: 12px; letter-spacing: .11em; text-transform: uppercase; color: var(--accent-soft);
+    margin: 0 0 8px; padding-bottom: 5px; border-bottom: 1px solid var(--line);
+  }
+  .sig-row {
+    display: flex; gap: 9px; align-items: baseline; padding: 5px 0;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .sig-row .tag { flex-shrink: 0; }
+  .sig-row a { color: var(--accent); text-decoration: none; }
+  .sig-row a:hover { text-decoration: underline; }
+  .tag.exit { background: var(--amber-wash); color: var(--amber); }
+  .tag.usechange { background: var(--blue-wash); color: var(--blue); }
+  .sig-none { color: var(--ink-faint); font-size: 13px; }
   .src-link {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none;
@@ -517,6 +535,14 @@
 
   </div>
 
+  <!-- OFF-MARKET SIGNALS -->
+  <section class="searches" id="signals">
+    <h2>Off-market signals</h2>
+    <p class="lede">Leading indicators from public registers — planning applications that hint a pub may come to market (or a competitor is opening), and Companies House distress-watch over the operating companies of pubs in the four areas. Refreshed daily.</p>
+    <div id="sig-planning"><p class="sig-loading">Loading planning signals…</p></div>
+    <div id="sig-companies" style="margin-top:18px"></div>
+  </section>
+
   <!-- SAVED SEARCHES -->
   <section class="searches">
     <h2>Saved searches — go straight to source</h2>
@@ -715,6 +741,85 @@
       }
       section.insertBefore(wrap, section.querySelector(".grid"));
     }
+
+    // ---- Off-market signals (auto-load, cached 24h server-side) ----
+    var SIG_URL = "https://iwhraufuotdwnsltuxfn.supabase.co/functions/v1/pubhunt-signals";
+    var AREA_NAMES = { "marylebone": "Marylebone", "fitzrovia": "Fitzrovia", "notting-hill": "Notting Hill", "primrose-hill": "Primrose Hill" };
+    var CLASS_TAG = { "possible-exit": ["exit", "Possible exit"], "use-change": ["usechange", "Use change"], "activity": ["type", "Activity"] };
+
+    function sigFetch(action) {
+      return fetch(SIG_URL, {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + ANON, "apikey": ANON, "Content-Type": "application/json" },
+        body: JSON.stringify({ action: action })
+      }).then(function (res) { return res.json(); });
+    }
+
+    function renderPlanning(d) {
+      var box = document.getElementById("sig-planning");
+      box.textContent = "";
+      var head = el("h4", null, "Planning applications · rolling 8 weeks · via PlanIt" +
+        (d.fetched_at ? " · " + new Date(d.fetched_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : ""));
+      head.className = "sig-area"; head.style.marginTop = "0";
+      box.appendChild(head);
+      var any = false;
+      Object.keys(d.results || {}).forEach(function (areaKey) {
+        var hits = (d.results[areaKey] || []).filter(function (h) { return !h.error; });
+        if (!hits.length) return;
+        any = true;
+        var sec = el("div", "sig-area");
+        sec.appendChild(el("h4", null, AREA_NAMES[areaKey] || areaKey));
+        hits.forEach(function (h) {
+          var row = el("div", "sig-row");
+          var t = CLASS_TAG[h.class] || CLASS_TAG.activity;
+          var tag = el("span", "tag " + t[0], t[1]);
+          row.appendChild(tag);
+          var body = el("span");
+          var strong = el("strong", null, (h.address || "").replace(/ London.*$/, ""));
+          body.appendChild(strong);
+          body.appendChild(document.createTextNode(" — " + (h.description || "")));
+          if (h.link) {
+            body.appendChild(document.createTextNode(" "));
+            var a = el("a", null, "details →");
+            a.href = h.link; a.target = "_blank"; a.rel = "noopener";
+            body.appendChild(a);
+          }
+          row.appendChild(body);
+          sec.appendChild(row);
+        });
+        box.appendChild(sec);
+      });
+      if (!any) box.appendChild(el("p", "sig-none", "No pub-relevant planning applications in the last 8 weeks — quiet market."));
+    }
+
+    function renderCompanies(d) {
+      var box = document.getElementById("sig-companies");
+      box.textContent = "";
+      var r = d.results || {};
+      var sec = el("div", "sig-area");
+      sec.appendChild(el("h4", null, "Companies House distress watch"));
+      if (r.pending) {
+        sec.appendChild(el("p", "sig-none", r.pending + "."));
+      } else {
+        sec.appendChild(el("p", "sig-none", "Watching " + r.watched + " operator companies. " +
+          ((r.alerts || []).length ? "" : "No distress flags — all operators look healthy.")));
+        (r.alerts || []).forEach(function (a) {
+          var row = el("div", "sig-row");
+          row.appendChild(el("span", "tag exit", "Alert"));
+          row.appendChild(el("span", null, a.pub_name + " (" + (a.postcode || "") + ") — " +
+            (a.company_name || a.company_number || "") + ": " + ((a.flags || []).join(", ") || a.error || "")));
+          sec.appendChild(row);
+        });
+      }
+      box.appendChild(sec);
+    }
+
+    sigFetch("planning").then(renderPlanning).catch(function () {
+      document.getElementById("sig-planning").textContent = "Planning signals unavailable right now.";
+    });
+    sigFetch("companies").then(renderCompanies).catch(function () {
+      document.getElementById("sig-companies").textContent = "";
+    });
 
     document.querySelectorAll(".pd-area-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {

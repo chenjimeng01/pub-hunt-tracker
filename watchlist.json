@@ -1,0 +1,170 @@
+[
+ {
+  "pub_name": "Black Horse",
+  "address": "6 RATHBONE PLACE, LONDON",
+  "postcode": "W1T 1HL",
+  "area": "fitzrovia"
+ },
+ {
+  "pub_name": "Bourne & Hollingsworth",
+  "address": "28 Rathbone Place",
+  "postcode": "W1T 1JF",
+  "area": "fitzrovia"
+ },
+ {
+  "pub_name": "Dominion Theatre",
+  "address": "The Dominion Theatre, 268-269 Tottenham Court Road",
+  "postcode": "W1T 7AQ",
+  "area": "fitzrovia"
+ },
+ {
+  "pub_name": "Be At One",
+  "address": "94 WIMPOLE STREET, LONDON",
+  "postcode": "W1G 0EH",
+  "area": "marylebone"
+ },
+ {
+  "pub_name": "Burlock and Fam Bar",
+  "address": "31 DUKE STREET, LONDON",
+  "postcode": "W1U 1LG",
+  "area": "marylebone"
+ },
+ {
+  "pub_name": "Clarette",
+  "address": "44 BLANDFORD STREET, MARYLEBONE HIGH STREET, LONDON",
+  "postcode": "W1U 7HS",
+  "area": "marylebone"
+ },
+ {
+  "pub_name": "Concept Club",
+  "address": "37 DUKE STREET, LONDON",
+  "postcode": "W1U 1LN",
+  "area": "marylebone"
+ },
+ {
+  "pub_name": "Amaro Bar",
+  "address": "Ground Floor, 15 Kensington High Street, LONDON",
+  "postcode": "W8 5NP",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Brewdog Paddington",
+  "address": "UNIT 1 WEST END QUAY SOUTH WHARF ROAD, LONDON",
+  "postcode": "W2 1JX",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Castle PH",
+  "address": "Public House, 100 Holland Park Avenue, LONDON",
+  "postcode": "W11 4UA",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Churchill Arms",
+  "address": "PUBLIC HOUSE, 119 Kensington Church Street, LONDON",
+  "postcode": "W8 7LN",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Coronet Cinema and Print Room at the Coronet",
+  "address": "103-111 Notting Hill Gate, LONDON",
+  "postcode": "W11 3LB",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Devonshire Arms",
+  "address": "Public House  The, 37 Marloes Road, LONDON",
+  "postcode": "W8 6LA",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Drop Kensington",
+  "address": "37 Earl's Court Road, LONDON",
+  "postcode": "W8 6ED",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "Duke of Wellington PH",
+  "address": "179 Portobello Road, LONDON",
+  "postcode": "W11 2ED",
+  "area": "notting-hill"
+ },
+ {
+  "pub_name": "3 Locks Brewery",
+  "address": "Arch 14 & 15, Water Lane",
+  "postcode": "NW1 8NZ",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Abbey Tavern",
+  "address": "124 Kentish Town Road",
+  "postcode": "NW1 9QB",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Backstage Bar",
+  "address": "The Royal Central School Of Speech And Drama Embassy Theatre, 62-64 Eton Avenue",
+  "postcode": "NW3 3HY",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Be At One Limited",
+  "address": "55 Camden High Street",
+  "postcode": "NW1 7JH",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Belushi's",
+  "address": "48-50 Camden High Street",
+  "postcode": "NW1 0LT",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Bucks Head",
+  "address": "202 Camden High Street",
+  "postcode": "NW1 8QR",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Bull & Bush",
+  "address": "Bull And Bush, North End Way",
+  "postcode": "NW3 7HE",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Camden Eye",
+  "address": "2 Kentish Town Road",
+  "postcode": "NW1 9NX",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Camden People's Theatre",
+  "address": "58-60 Hampstead Road",
+  "postcode": "NW1 2PY",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Camden Road Arms",
+  "address": "102-106 Camden Road",
+  "postcode": "NW1 9EA",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Crown & Anchor",
+  "address": "137 Drummond Street",
+  "postcode": "NW1 2HL",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "DEGUSTO",
+  "address": "94 Camden Road",
+  "postcode": "NW1 9EA",
+  "area": "primrose-hill"
+ },
+ {
+  "pub_name": "Doric Arch",
+  "address": "Euston Station, Unit 50 Eversholt Street",
+  "postcode": "NW1 2HS",
+  "area": "primrose-hill"
+ }
+]

@@ -113,7 +113,41 @@ A scheduled cloud agent refreshes the listings twice a week. The procedure:
    demographics, restaurants — district level; refresh at most monthly).
    Only report values the API actually returned — never invent figures.
 
-6. **Commit and push** to `main` with message `refresh: <date> — N listings, M new`.
+6. **Licensing register sweep (best-effort).** Check the public premises-licence
+   registers for new applications, transfers, variations, and surrenders at
+   addresses in the target postcodes:
+   - Westminster: `licensing.westminster.gov.uk` (current applications search)
+   - Camden: `camden.gov.uk` licensing register / current licensing applications
+   - RBKC: `rbkc.gov.uk` licensing register
+   These are HTML pages on different systems — read them, extract anything at a
+   pub/bar address in W1U/W1H/W1G/W1T/W1W/W11/W2/W8/NW1/NW3, and note it in the
+   commit summary. A licence **surrender or transfer** at a pub address is a
+   strong lead — flag it prominently. If a register is down or unsearchable,
+   skip it and say so; do not guess.
+
+7. **Commit and push** to `main` with message `refresh: <date> — N listings, M new`.
+
+## Off-market signals architecture
+
+The tracker page has a Signals section that loads live (cached 24h) from the
+Supabase edge function `pubhunt-signals`:
+
+- **`{action: "planning"}`** — queries PlanIt (free, no key) for planning
+  applications within ~1km of each area centre, rolling 56-day window, filtered
+  to pub/licensed-use relevance. Classes: `possible-exit` (pub + residential
+  conversion terms — a freeholder heading for the door), `use-change` (change of
+  use involving licensed/restaurant/Class E/sui generis), `activity` (other).
+- **`{action: "companies"}`** — Companies House watch over `pubhunt_watchlist`
+  (Supabase table; human-readable copy in `watchlist.json`, built from the FSA
+  food-hygiene register's pub/bar premises in the four areas). Flags non-active
+  status, overdue accounts/confirmation statements. Needs the **live** CH API
+  key in Vault (`COMPANIES_HOUSE_API_KEY`, read via service-role-only RPC
+  `pubhunt_get_ch_key`). Watchlist rows need `company_number` populated —
+  match operators conservatively and curate by hand; wrong matches are worse
+  than missing ones.
+
+Both API keys live in Supabase Vault — **never in this public repo**.
+The scheduled agent should mention notable new signals in its final summary.
 
 ### Hard rules
 
