@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>London Pub Property Tracker</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
 <style>
   * { margin: 0; }
@@ -311,7 +313,58 @@
   .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
   .legend .tag { cursor: default; }
 
+  /* Map */
+  .map-section { margin: 0 0 8px; }
+  .map-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-bottom: 10px;
+  }
+  .map-head h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); }
+  .map-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--ink-faint); align-items: center; }
+  .map-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .map-legend .pin { width: 12px; height: 12px; border-width: 2px; box-shadow: none; }
+  #map {
+    height: 440px; border: 1px solid var(--line-strong); border-radius: var(--radius);
+    background: var(--surface-2); box-shadow: var(--shadow); position: relative; z-index: 0;
+  }
+  .map-note { margin-top: 8px; font-size: 12.5px; color: var(--ink-faint); min-height: 1.4em; }
+  .pin {
+    display: block; width: 20px; height: 20px; border-radius: 50%; box-sizing: border-box;
+    border: 2.5px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.45);
+  }
+  .pin.sale { background: var(--amber); }
+  .pin.let { background: var(--blue); }
+  .pin.approx { background: var(--surface); border: 2.5px dashed var(--amber); box-shadow: 0 1px 4px rgba(0,0,0,.35); }
+  .pin.approx.let { border-color: var(--blue); }
+  .leaflet-marker-icon.pin-wrap:hover .pin, .leaflet-marker-icon.pin-wrap:focus .pin { transform: scale(1.2); }
+  .pin { transition: transform .12s ease; }
+  .leaflet-container { font-family: var(--sans); }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--surface); color: var(--ink); }
+  .leaflet-popup-content { margin: 14px 16px; min-width: 190px; font-size: 13px; line-height: 1.4; }
+  .leaflet-container a.leaflet-popup-close-button { color: var(--ink-faint); }
+  .leaflet-container .leaflet-control-attribution { background: color-mix(in srgb, var(--surface) 85%, transparent); color: var(--ink-soft); }
+  .leaflet-container .leaflet-control-attribution a { color: var(--accent); }
+  .map-pop h4 { font-family: var(--serif); font-size: 16px; font-weight: 600; margin: 6px 0 2px; color: var(--ink); }
+  .map-pop .pop-price { font-family: var(--mono); font-weight: 600; color: var(--accent); }
+  .map-pop .pop-approx { margin-top: 4px; font-size: 12px; color: var(--ink-faint); }
+  .map-pop .pop-actions { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+  .map-pop .pop-actions a, .map-pop .pop-actions button {
+    font: inherit; font-size: 13px; font-weight: 600; color: var(--accent); background: none;
+    border: 0; padding: 0; cursor: pointer; text-decoration: none;
+  }
+  .map-pop .pop-actions a:hover, .map-pop .pop-actions button:hover { text-decoration: underline; }
+  .card-foot { flex-wrap: wrap; }
+  .card.flash { animation: card-flash 1.8s ease-out; }
+  @keyframes card-flash {
+    0%, 35% { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-wash), var(--shadow); }
+    100% { box-shadow: var(--shadow); }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.7); }
+  }
+  :root[data-theme="dark"] .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.7); }
+
   @media (max-width: 620px) {
+    #map { height: 340px; }
     .masthead-inner { flex-direction: column; align-items: flex-start; }
     .meta-block { text-align: left; align-items: flex-start; }
     .meta-block .cadence { align-self: flex-start; }
@@ -365,6 +418,19 @@
       </div>
     </div>
   </div>
+
+  <section class="map-section" id="map-section" aria-label="Map of listings">
+    <div class="map-head">
+      <h2>Map</h2>
+      <div class="map-legend">
+        <span><i class="pin sale"></i> For sale</span>
+        <span><i class="pin let"></i> To let</span>
+        <span><i class="pin approx"></i> Postcode area only (approximate)</span>
+      </div>
+    </div>
+    <div id="map" role="application" aria-label="Map of tracked listings"></div>
+    <p class="map-note" id="map-note" aria-live="polite">Locating listings…</p>
+  </section>
 
   <div id="listings">
 
@@ -1291,6 +1357,219 @@
             btn.disabled = false;
           });
       });
+    });
+  })();
+</script>
+
+<script>
+  // Map of listings. Positions come from each card's data-pc, geocoded in the
+  // browser via postcodes.io (free, no key) and cached in localStorage, so new
+  // cards appear on the map with no extra data to maintain. A card with only an
+  // outcode (e.g. "W1T") is placed at the outcode centre and drawn as approximate.
+  (function () {
+    var section = document.getElementById("map-section");
+    var note = document.getElementById("map-note");
+    if (!window.L) { section.hidden = true; return; }
+
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".card[data-pc]"));
+    var CACHE_KEY = "pubhunt-geo-v1";
+    var API = "https://api.postcodes.io";
+    var FULL_RE = /^[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2}$/;
+
+    var cache = {};
+    try { cache = JSON.parse(localStorage.getItem(CACHE_KEY)) || {}; } catch (e) {}
+    function saveCache() { try { localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); } catch (e) {} }
+
+    function norm(pc) { return pc.toUpperCase().replace(/\s+/g, " ").trim(); }
+    function outcode(pc) { return pc.split(" ")[0]; }
+
+    var map = L.map("map", { scrollWheelZoom: false }).setView([51.52, -0.15], 12);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    // Wheel-zoom only after the map is clicked, so it never hijacks page scrolling.
+    map.on("click focus", function () { map.scrollWheelZoom.enable(); });
+    map.on("mouseout blur", function () { map.scrollWheelZoom.disable(); });
+
+    function getJSON(url, body) {
+      var ctl = new AbortController();
+      var timer = setTimeout(function () { ctl.abort(); }, 10000);
+      var opts = { signal: ctl.signal };
+      if (body) {
+        opts.method = "POST";
+        opts.headers = { "Content-Type": "application/json" };
+        opts.body = JSON.stringify(body);
+      }
+      return fetch(url, opts)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; })
+        .then(function (j) { clearTimeout(timer); return j; });
+    }
+
+    function geocode(keys) {
+      var fulls = [], outs = [];
+      keys.forEach(function (k) {
+        if (FULL_RE.test(k) && !cache[k] && fulls.indexOf(k) < 0) fulls.push(k);
+      });
+      var bulk = fulls.length
+        ? getJSON(API + "/postcodes", { postcodes: fulls }).then(function (j) {
+            ((j && j.result) || []).forEach(function (r) {
+              if (r.query && r.result && r.result.latitude != null) cache[norm(r.query)] = [r.result.latitude, r.result.longitude];
+            });
+          })
+        : Promise.resolve();
+      return bulk.then(function () {
+        // Anything that is only an outcode, or a full postcode that did not resolve.
+        keys.forEach(function (k) {
+          var o = outcode(k);
+          if ((!FULL_RE.test(k) || !cache[k]) && !cache["~" + o] && outs.indexOf(o) < 0) outs.push(o);
+        });
+        return Promise.all(outs.map(function (o) {
+          return getJSON(API + "/outcodes/" + encodeURIComponent(o)).then(function (j) {
+            if (j && j.result && j.result.latitude != null) cache["~" + o] = [j.result.latitude, j.result.longitude];
+          });
+        }));
+      }).then(saveCache);
+    }
+
+    function locate(pc) {
+      if (FULL_RE.test(pc) && cache[pc]) return { ll: cache[pc], approx: false };
+      var c = cache["~" + outcode(pc)];
+      return c ? { ll: c, approx: true } : null;
+    }
+
+    function popupFor(card, approx) {
+      var box = document.createElement("div");
+      box.className = "map-pop";
+      var tags = document.createElement("div");
+      tags.className = "card-tags";
+      Array.prototype.forEach.call(card.querySelectorAll(".card-tags .tag.sale, .card-tags .tag.let, .card-tags .tag.type"), function (t) {
+        tags.appendChild(t.cloneNode(true));
+      });
+      box.appendChild(tags);
+      var h = document.createElement("h4");
+      h.textContent = card.querySelector("h3").textContent;
+      box.appendChild(h);
+      var price = card.querySelector(".price");
+      if (price) {
+        var p = document.createElement("div");
+        p.className = "pop-price";
+        p.textContent = price.textContent.replace(/\s+/g, " ").trim();
+        box.appendChild(p);
+      }
+      if (approx) {
+        var ap = document.createElement("div");
+        ap.className = "pop-approx";
+        ap.textContent = "Approximate location — postcode area only";
+        box.appendChild(ap);
+      }
+      var actions = document.createElement("div");
+      actions.className = "pop-actions";
+      var jump = document.createElement("button");
+      jump.type = "button";
+      jump.textContent = "View listing ↓";
+      jump.addEventListener("click", function () {
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        card.classList.remove("flash");
+        void card.offsetWidth;
+        card.classList.add("flash");
+      });
+      actions.appendChild(jump);
+      var src = card.querySelector(".src-link");
+      if (src && src.href) {
+        var a = document.createElement("a");
+        a.href = src.href; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = "Source →";
+        actions.appendChild(a);
+      }
+      box.appendChild(actions);
+      return box;
+    }
+
+    var items = [];   // { card, marker, approx }
+    var layer = L.layerGroup().addTo(map);
+
+    function visible(card) { return card.style.display !== "none"; }
+
+    function sync(fit) {
+      var shown = [], approx = 0;
+      items.forEach(function (it) {
+        var on = visible(it.card);
+        if (on) { layer.addLayer(it.marker); shown.push(it.marker.getLatLng()); if (it.approx) approx++; }
+        else layer.removeLayer(it.marker);
+      });
+      var total = cards.filter(visible).length;
+      var msg = shown.length + " of " + total + " listing" + (total === 1 ? "" : "s") + " on the map";
+      if (shown.length < total) msg += " (" + (total - shown.length) + " could not be located)";
+      if (approx) msg += " · " + approx + " shown at postcode-area centre";
+      note.textContent = msg + ".";
+      if (fit && shown.length) map.fitBounds(L.latLngBounds(shown).pad(0.25), { maxZoom: 15 });
+    }
+
+    function build() {
+      var groups = {};
+      cards.forEach(function (card) {
+        var loc = locate(norm(card.getAttribute("data-pc")));
+        if (!loc) return;
+        var key = loc.ll[0].toFixed(5) + "," + loc.ll[1].toFixed(5);
+        (groups[key] = groups[key] || []).push({ card: card, loc: loc });
+      });
+      Object.keys(groups).forEach(function (key) {
+        var g = groups[key];
+        g.forEach(function (e, i) {
+          var lat = e.loc.ll[0], lng = e.loc.ll[1];
+          if (g.length > 1) {   // fan co-located listings out so none hides another
+            var r = e.loc.approx ? 80 : 25, ang = (2 * Math.PI * i) / g.length;
+            lat += (r * Math.cos(ang)) / 111320;
+            lng += (r * Math.sin(ang)) / (111320 * Math.cos((lat * Math.PI) / 180));
+          }
+          var status = e.card.getAttribute("data-status") === "let" ? "let" : "sale";
+          var marker = L.marker([lat, lng], {
+            title: e.card.querySelector("h3").textContent,
+            riseOnHover: true,
+            icon: L.divIcon({
+              className: "pin-wrap",
+              html: '<span class="pin ' + status + (e.loc.approx ? " approx" : "") + '"></span>',
+              iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+            })
+          });
+          marker.bindPopup(popupFor(e.card, e.loc.approx));
+          items.push({ card: e.card, marker: marker, approx: e.loc.approx });
+
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "pd-btn";
+          btn.textContent = "📍 Map";
+          btn.addEventListener("click", function () {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            map.setView(marker.getLatLng(), Math.max(map.getZoom(), 16));
+            layer.addLayer(marker);
+            marker.openPopup();
+          });
+          var foot = e.card.querySelector(".card-foot");
+          foot.insertBefore(btn, foot.querySelector(".pd-btn"));
+        });
+      });
+      sync(true);
+    }
+
+    // Re-sync after the existing filter handlers have updated card visibility.
+    document.querySelectorAll(".chip-btn").forEach(function (b) {
+      b.addEventListener("click", function () { sync(true); });
+    });
+
+    var keys = [];
+    cards.forEach(function (c) {
+      var k = norm(c.getAttribute("data-pc"));
+      if (keys.indexOf(k) < 0) keys.push(k);
+    });
+    geocode(keys).then(function () {
+      if (!keys.some(function (k) { return locate(k); })) {
+        note.textContent = "Couldn't look up listing locations just now (postcodes.io unreachable). Reload to retry.";
+        return;
+      }
+      build();
     });
   })();
 </script>

@@ -11,6 +11,12 @@ units (restaurants/retail) — good pub sites often come to market as restaurant
 The whole site is a single hand-maintained `index.html`. No build step.
 Push to `main` and GitHub Pages redeploys automatically.
 
+The page includes a map (Leaflet + OpenStreetMap tiles) of every listing card. Pins
+are placed from each card's `data-pc` postcode, geocoded in the visitor's browser via
+postcodes.io and cached in localStorage — new cards appear on the map automatically,
+no coordinates to maintain. A card whose `data-pc` is only an outcode (e.g. `W1T`) is
+drawn at the outcode centre as an approximate (dashed) pin, so prefer a full postcode.
+
 ## Refresh procedure (automated, Mon & Thu)
 
 A scheduled cloud agent refreshes the listings twice a week. The procedure:
