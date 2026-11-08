@@ -1,22 +1,27 @@
 {
- "schema_version": 1,
+ "schema_version": 2,
  "generated": "2026-11-08",
  "pubs": [
   {
-   "id": "black-horse-w1t-1hl",
+   "id": "fsa-1432425",
+   "fhrsid": 1432425,
    "name": "Black Horse",
-   "address": "6 RATHBONE PLACE, LONDON",
+   "address": "6 Rathbone Place, London",
    "postcode": "W1T 1HL",
    "area": "fitzrovia",
+   "lat": 51.5167276,
+   "lng": -0.132952,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-10-02"
+    }
    },
    "score": null,
    "notes": ""
@@ -27,9 +32,11 @@
    "address": "28 Rathbone Place",
    "postcode": "W1T 1JF",
    "area": "fitzrovia",
+   "lat": null,
+   "lng": null,
+   "source": "fsa-watchlist",
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
    "operator": {
     "company_number": "08471250",
     "company_name": "BOURNE & HOLLINGSWORTH BAR LTD",
@@ -37,370 +44,2143 @@
    },
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "dominion-theatre-w1t-7aq",
+   "id": "fsa-423694",
+   "fhrsid": 423694,
+   "name": "Bricklayers Arms",
+   "address": "31 Gresse Street, London",
+   "postcode": "W1T 1QS",
+   "area": "fitzrovia",
+   "lat": 51.5177599,
+   "lng": -0.1333998,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2023-03-13"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426465",
+   "fhrsid": 426465,
    "name": "Dominion Theatre",
-   "address": "The Dominion Theatre, 268-269 Tottenham Court Road",
+   "address": "The Dominion Theatre, 268-269 Tottenham Court Road, London",
    "postcode": "W1T 7AQ",
    "area": "fitzrovia",
+   "lat": 51.5169627,
+   "lng": -0.1296417,
    "trading_status": "trading",
    "needs_review": true,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-12-09"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "be-at-one-w1g-0eh",
+   "id": "fsa-470864",
+   "fhrsid": 470864,
+   "name": "Fitzrovia Belle",
+   "address": "174 Tottenham Court Road",
+   "postcode": "W1T 7NT",
+   "area": "fitzrovia",
+   "lat": 51.52257,
+   "lng": -0.135706,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2023-02-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423953",
+   "fhrsid": 423953,
+   "name": "Fitzroy Tavern",
+   "address": "16A Charlotte Street, London",
+   "postcode": "W1T 2LY",
+   "area": "fitzrovia",
+   "lat": 51.5187053,
+   "lng": -0.1346008,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 1,
+     "inspected": "2026-02-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1884178",
+   "fhrsid": 1884178,
+   "name": "iGOLI BAR LTD",
+   "address": "23-25 Eastcastle Street, London",
+   "postcode": "W1W 8DF",
+   "area": "fitzrovia",
+   "lat": 51.5167752,
+   "lng": -0.1382109,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": null,
+     "inspected": "1901-01-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426464",
+   "fhrsid": 426464,
+   "name": "Jack Horner",
+   "address": "235-236 Tottenham Court Road, London",
+   "postcode": "W1T 7QN",
+   "area": "fitzrovia",
+   "lat": 51.5187746,
+   "lng": -0.1321764,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-05-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1105523",
+   "fhrsid": 1105523,
+   "name": "Lore Of The Land",
+   "address": "4 Conway Street, London",
+   "postcode": "W1T 6BB",
+   "area": "fitzrovia",
+   "lat": 51.5220851,
+   "lng": -0.1396087,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-01-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1590015",
+   "fhrsid": 1590015,
+   "name": "Lucky Saint",
+   "address": "58 Devonshire Street, London",
+   "postcode": "W1W 5EA",
+   "area": "fitzrovia",
+   "lat": 51.5222121,
+   "lng": -0.1442164,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-09-25"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423686",
+   "fhrsid": 423686,
+   "name": "One Tun",
+   "address": "58-60 Goodge Street, London",
+   "postcode": "W1T 4ND",
+   "area": "fitzrovia",
+   "lat": 51.5191631,
+   "lng": -0.1368162,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-05-12"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424419",
+   "fhrsid": 424419,
+   "name": "Prince Of Wales Feathers",
+   "address": "8 Warren Street, London",
+   "postcode": "W1T 5LD",
+   "area": "fitzrovia",
+   "lat": 51.5241529,
+   "lng": -0.1384433,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-08-29"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-708535",
+   "fhrsid": 708535,
+   "name": "Reverend J W Simpson",
+   "address": "32-34 Goodge Street",
+   "postcode": "W1T 2QJ",
+   "area": "fitzrovia",
+   "lat": 51.5197313,
+   "lng": -0.1352219,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2023-09-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424817",
+   "fhrsid": 424817,
+   "name": "Spearmint Rhino",
+   "address": "161 Tottenham Court Road, London",
+   "postcode": "W1T 7NN",
+   "area": "fitzrovia",
+   "lat": 51.5232681,
+   "lng": -0.1365189,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2018-10-17"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1000126",
+   "fhrsid": 1000126,
+   "name": "TCR Lounge Bar",
+   "address": "183 Tottenham Court Road, London",
+   "postcode": "W1T 7PE",
+   "area": "fitzrovia",
+   "lat": 51.5220273,
+   "lng": -0.1354019,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-02-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426443",
+   "fhrsid": 426443,
+   "name": "The Carpenters Arms",
+   "address": "68-70 Whitfield Street, London",
+   "postcode": "W1T 4EY",
+   "area": "fitzrovia",
+   "lat": 51.5217931,
+   "lng": -0.136507,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-04-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424828",
+   "fhrsid": 424828,
+   "name": "The Court",
+   "address": "108A Tottenham Court Road, London",
+   "postcode": "W1T 5AA",
+   "area": "fitzrovia",
+   "lat": 51.5229699,
+   "lng": -0.1369923,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-09-07"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423679",
+   "fhrsid": 423679,
+   "name": "The Fitzrovia",
+   "address": "Flat A, 18 Goodge Street, London",
+   "postcode": "W1T 2QD",
+   "area": "fitzrovia",
+   "lat": 51.5199051,
+   "lng": -0.13484,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2017-09-05"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1036603",
+   "fhrsid": 1036603,
+   "name": "The Grafton Arms",
+   "address": "72 Grafton Way, London",
+   "postcode": "W1T 5DU",
+   "area": "fitzrovia",
+   "lat": 51.5233033,
+   "lng": -0.1387374,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2022-06-15"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-411994",
+   "fhrsid": 411994,
+   "name": "The Hidden Society",
+   "address": "Basement 61 Goodge Street, London",
+   "postcode": "W1T 1TL",
+   "area": "fitzrovia",
+   "lat": 51.5189148,
+   "lng": -0.136466,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-03-19"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1302726",
+   "fhrsid": 1302726,
+   "name": "The London Cocktail Club",
+   "address": "Portland House 4 Great Portland Street, London",
+   "postcode": "W1W 8QJ",
+   "area": "fitzrovia",
+   "lat": 51.5159313,
+   "lng": -0.1405659,
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-02-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425716",
+   "fhrsid": 425716,
+   "name": "Vault 139",
+   "address": "139-143 Whitfield Street, London",
+   "postcode": "W1T 5EP",
+   "area": "fitzrovia",
+   "lat": 51.5236282348633,
+   "lng": -0.138897001743317,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2019-02-14"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1834711",
+   "fhrsid": 1834711,
+   "name": "Wheatsheaf",
+   "address": "The Wheatsheaf, 25 Rathbone Place, London",
+   "postcode": "W1T 1JB",
+   "area": "fitzrovia",
+   "lat": 51.5177327,
+   "lng": -0.1340194,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-10-21"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1533933",
+   "fhrsid": 1533933,
+   "name": "Whistle Punks",
+   "address": "52-53 Eastcastle Street, London",
+   "postcode": "W1W 8ED",
+   "area": "fitzrovia",
+   "lat": 51.51656068,
+   "lng": -0.13820423,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2022-09-22"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1863931",
+   "fhrsid": 1863931,
+   "name": "Angeliques Wine House",
+   "address": "18-19 St Christopher's Place, London",
+   "postcode": "W1U 1NN",
+   "area": "marylebone",
+   "lat": 51.5157467,
+   "lng": -0.150504,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-09-24"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1206511",
+   "fhrsid": 1206511,
    "name": "Be At One",
-   "address": "94 WIMPOLE STREET, LONDON",
+   "address": "94 Wimpole Street, London",
    "postcode": "W1G 0EH",
    "area": "marylebone",
+   "lat": 51.5159506,
+   "lng": -0.147469,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-03-13"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "burlock-and-fam-bar-w1u-1lg",
+   "id": "fsa-1559391",
+   "fhrsid": 1559391,
    "name": "Burlock and Fam Bar",
-   "address": "31 DUKE STREET, LONDON",
+   "address": "31 Duke Street, London",
    "postcode": "W1U 1LG",
    "area": "marylebone",
+   "lat": 51.5151616,
+   "lng": -0.1516087,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-05-28"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "clarette-w1u-7hs",
+   "id": "fsa-1264740",
+   "fhrsid": 1264740,
    "name": "Clarette",
-   "address": "44 BLANDFORD STREET, MARYLEBONE HIGH STREET, LONDON",
+   "address": "44 Blandford Street, Marylebone High Street, London",
    "postcode": "W1U 7HS",
    "area": "marylebone",
+   "lat": 51.5185397,
+   "lng": -0.1536916,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-08-05"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "concept-club-w1u-1ln",
+   "id": "fsa-1918178",
+   "fhrsid": 1918178,
+   "name": "Cock & Lion",
+   "address": "62 Wigmore Street, London",
+   "postcode": "W1U 2SA",
+   "area": "marylebone",
+   "lat": 51.5163649,
+   "lng": -0.1497871,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-03-18"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1669406",
+   "fhrsid": 1669406,
    "name": "Concept Club",
-   "address": "37 DUKE STREET, LONDON",
+   "address": "37 Duke Street, London",
    "postcode": "W1U 1LN",
    "area": "marylebone",
+   "lat": 51.514998,
+   "lng": -0.1515,
    "trading_status": "trading",
    "needs_review": true,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-04-27"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "amaro-bar-w8-5np",
+   "id": "fsa-1077600",
+   "fhrsid": 1077600,
+   "name": "Harry's Bar",
+   "address": "30-34 James Street, Marylebone, London",
+   "postcode": "W1U 1EP",
+   "area": "marylebone",
+   "lat": 51.5152808,
+   "lng": -0.1505883,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-15"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1099884",
+   "fhrsid": 1099884,
+   "name": "Home House Studio",
+   "address": "44-48 Great Cumberland Place, London",
+   "postcode": "W1H 7BS",
+   "area": "marylebone",
+   "lat": 51.515749,
+   "lng": -0.1598003,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-10-30"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1686874",
+   "fhrsid": 1686874,
+   "name": "Maroto",
+   "address": "4 Vere Street, London",
+   "postcode": "W1G 0DH",
+   "area": "marylebone",
+   "lat": 51.515026,
+   "lng": -0.1470021,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-11-09"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1702993",
+   "fhrsid": 1702993,
+   "name": "Moyagi",
+   "address": "5 Cavendish Place, London",
+   "postcode": "W1G 0QA",
+   "area": "marylebone",
+   "lat": 51.517189,
+   "lng": -0.1433253,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-09-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1876959",
+   "fhrsid": 1876959,
+   "name": "New Explorer",
+   "address": "23 Great Castle Street, London",
+   "postcode": "W1G 0JA",
+   "area": "marylebone",
+   "lat": 51.5159054,
+   "lng": -0.1429019,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-11-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-411592",
+   "fhrsid": 411592,
+   "name": "The Golden Eagle",
+   "address": "The Golden Eagle 59 Marylebone Lane, London",
+   "postcode": "W1U 2NY",
+   "area": "marylebone",
+   "lat": 51.5176493,
+   "lng": -0.1508305,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-01-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1961568",
+   "fhrsid": 1961568,
+   "name": "The Hart",
+   "address": "56 Blandford Street, Marylebone High Street, London",
+   "postcode": "W1U 7JA",
+   "area": "marylebone",
+   "lat": 51.5184495,
+   "lng": -0.1548195,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-06"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1468051",
+   "fhrsid": 1468051,
    "name": "Amaro Bar",
    "address": "Ground Floor, 15 Kensington High Street, LONDON",
    "postcode": "W8 5NP",
    "area": "notting-hill",
+   "lat": 51.5021515,
+   "lng": -0.1882259,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-03-19"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "brewdog-paddington-w2-1jx",
+   "id": "fsa-1112332",
+   "fhrsid": 1112332,
    "name": "Brewdog Paddington",
-   "address": "UNIT 1 WEST END QUAY SOUTH WHARF ROAD, LONDON",
+   "address": "Unit 1 West End Quay South Wharf Road, London",
    "postcode": "W2 1JX",
    "area": "notting-hill",
+   "lat": 51.5183885,
+   "lng": -0.1710231,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-28"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "castle-ph-w11-4ua",
+   "id": "fsa-334419",
+   "fhrsid": 334419,
    "name": "Castle PH",
    "address": "Public House, 100 Holland Park Avenue, LONDON",
    "postcode": "W11 4UA",
    "area": "notting-hill",
+   "lat": 51.50683,
+   "lng": -0.207634,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-07"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "churchill-arms-w8-7ln",
+   "id": "fsa-334562",
+   "fhrsid": 334562,
    "name": "Churchill Arms",
    "address": "PUBLIC HOUSE, 119 Kensington Church Street, LONDON",
    "postcode": "W8 7LN",
    "area": "notting-hill",
+   "lat": 51.506561,
+   "lng": -0.194762,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-29"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "coronet-cinema-and-print-room-at-the-coronet-w11-3lb",
+   "id": "fsa-718348",
+   "fhrsid": 718348,
    "name": "Coronet Cinema and Print Room at the Coronet",
    "address": "103-111 Notting Hill Gate, LONDON",
    "postcode": "W11 3LB",
    "area": "notting-hill",
+   "lat": 51.508496,
+   "lng": -0.198923,
    "trading_status": "trading",
    "needs_review": true,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-25"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "devonshire-arms-w8-6la",
+   "id": "fsa-334439",
+   "fhrsid": 334439,
    "name": "Devonshire Arms",
    "address": "Public House  The, 37 Marloes Road, LONDON",
    "postcode": "W8 6LA",
    "area": "notting-hill",
+   "lat": 51.497078,
+   "lng": -0.192702,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-01-14"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "drop-kensington-w8-6ed",
+   "id": "fsa-1556866",
+   "fhrsid": 1556866,
    "name": "Drop Kensington",
    "address": "37 Earl's Court Road, LONDON",
    "postcode": "W8 6ED",
    "area": "notting-hill",
+   "lat": 51.4976924,
+   "lng": -0.1974827,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-02-26"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "duke-of-wellington-ph-w11-2ed",
+   "id": "fsa-334640",
+   "fhrsid": 334640,
    "name": "Duke of Wellington PH",
    "address": "179 Portobello Road, LONDON",
    "postcode": "W11 2ED",
    "area": "notting-hill",
+   "lat": 51.515542,
+   "lng": -0.205102,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-01-14"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "3-locks-brewery-nw1-8nz",
+   "id": "fsa-334359",
+   "fhrsid": 334359,
+   "name": "Earl of Lonsdale",
+   "address": "Public House, 277-281 Westbourne Grove, LONDON",
+   "postcode": "W11 2QA",
+   "area": "notting-hill",
+   "lat": 51.5134726,
+   "lng": -0.2026389,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-03-26"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334418",
+   "fhrsid": 334418,
+   "name": "Elephant & Castle",
+   "address": "Public House, 40-42 Holland Street, LONDON",
+   "postcode": "W8 4LT",
+   "area": "notting-hill",
+   "lat": 51.503222,
+   "lng": -0.192805,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-09-23"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334462",
+   "fhrsid": 334462,
+   "name": "Greyhound Public House",
+   "address": "Public House, 1 Kensington Square, LONDON",
+   "postcode": "W8 5EP",
+   "area": "notting-hill",
+   "lat": 51.500784,
+   "lng": -0.189242,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-896545",
+   "fhrsid": 896545,
+   "name": "Heist Bank",
+   "address": "Restaurant 5 North Wharf Road, London",
+   "postcode": "W2 1LA",
+   "area": "notting-hill",
+   "lat": 51.5188399,
+   "lng": -0.1760789,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-02-16"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334357",
+   "fhrsid": 334357,
+   "name": "Ladbroke Arms Public House",
+   "address": "54 Ladbroke Road, LONDON",
+   "postcode": "W11 3NW",
+   "area": "notting-hill",
+   "lat": 51.509121,
+   "lng": -0.202717,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-10-05"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1230202",
+   "fhrsid": 1230202,
+   "name": "Larry King Limted",
+   "address": "2-4 Lambton Place, LONDON",
+   "postcode": "W11 2SH",
+   "area": "notting-hill",
+   "lat": 51.5140298,
+   "lng": -0.2002677,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": null,
+     "inspected": "1901-01-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-949287",
+   "fhrsid": 949287,
+   "name": "Lockhouse Pub",
+   "address": "3 Merchant Square, Hyde Park, London",
+   "postcode": "W2 1AZ",
+   "area": "notting-hill",
+   "lat": 51.51912,
+   "lng": -0.1717813,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2022-10-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1942019",
+   "fhrsid": 1942019,
+   "name": "Nadynubian Club",
+   "address": "372 Edgware Road, London",
+   "postcode": "W2 1EB",
+   "area": "notting-hill",
+   "lat": 51.5216942,
+   "lng": -0.1719429,
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": null,
+     "inspected": "1901-01-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-640130",
+   "fhrsid": 640130,
+   "name": "Notting Hill Arts Club",
+   "address": "19-21 Notting Hill Gate, LONDON",
+   "postcode": "W11 3JQ",
+   "area": "notting-hill",
+   "lat": 51.509143,
+   "lng": -0.19479,
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-01-18"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-850666",
+   "fhrsid": 850666,
+   "name": "Old Swan",
+   "address": "Public House, 206 Kensington Church Street, LONDON",
+   "postcode": "W8 4DP",
+   "area": "notting-hill",
+   "lat": 51.508794,
+   "lng": -0.194962,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-01-06"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1884202",
+   "fhrsid": 1884202,
+   "name": "Phoenix",
+   "address": "51 Moscow Road, London",
+   "postcode": "W2 4AL",
+   "area": "notting-hill",
+   "lat": 51.512297,
+   "lng": -0.1899307,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-02-05"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1711016",
+   "fhrsid": 1711016,
+   "name": "Portobello Star Public House",
+   "address": "Public House, 171 Portobello Road, LONDON",
+   "postcode": "W11 2DY",
+   "area": "notting-hill",
+   "lat": 51.514186,
+   "lng": -0.204074,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-03-14"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334355",
+   "fhrsid": 334355,
+   "name": "Prince Albert",
+   "address": "11 Pembridge Road, LONDON",
+   "postcode": "W11 3HQ",
+   "area": "notting-hill",
+   "lat": 51.509547,
+   "lng": -0.1977,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-11-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1401078",
+   "fhrsid": 1401078,
+   "name": "Prince Of Wales",
+   "address": "Public House, 8 Kensington Church Street, LONDON",
+   "postcode": "W8 4EP",
+   "area": "notting-hill",
+   "lat": 51.502635,
+   "lng": -0.190941,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-21"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1978210",
+   "fhrsid": 1978210,
+   "name": "Salt Whisky Bar and Dining Room",
+   "address": "13 Edgware Road, London",
+   "postcode": "W2 2JE",
+   "area": "notting-hill",
+   "lat": 51.5142486,
+   "lng": -0.1621812,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 2,
+     "inspected": "2026-04-13"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334026",
+   "fhrsid": 334026,
+   "name": "Stewart Arms PH",
+   "address": "26 Norland Road, LONDON",
+   "postcode": "W11 4TR",
+   "area": "notting-hill",
+   "lat": 51.505728,
+   "lng": -0.216107,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-04-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334358",
+   "fhrsid": 334358,
+   "name": "Sun in Splendour",
+   "address": "PUBLIC HOUSE, 7 Portobello Road, LONDON",
+   "postcode": "W11 3DA",
+   "area": "notting-hill",
+   "lat": 51.510911,
+   "lng": -0.198092,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-05"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1679197",
+   "fhrsid": 1679197,
+   "name": "The Bear",
+   "address": "27-29 Spring Street, London",
+   "postcode": "W2 1JA",
+   "area": "notting-hill",
+   "lat": 51.5148235,
+   "lng": -0.1753889,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-11-14"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1036546",
+   "fhrsid": 1036546,
+   "name": "The Beer House",
+   "address": "Paddington Station Concourse Praed Street, London",
+   "postcode": "W2 1RH",
+   "area": "notting-hill",
+   "lat": 51.5164833,
+   "lng": -0.1774557,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-02-06"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334424",
+   "fhrsid": 334424,
+   "name": "The Britannia",
+   "address": "Public House, 1 Allen Street, LONDON",
+   "postcode": "W8 6UX",
+   "area": "notting-hill",
+   "lat": 51.497109,
+   "lng": -0.194732,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-08-12"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334587",
+   "fhrsid": 334587,
+   "name": "The Castle",
+   "address": "Public House, 225 Portobello Road, LONDON",
+   "postcode": "W11 1LU",
+   "area": "notting-hill",
+   "lat": 51.51633,
+   "lng": -0.205546,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-08-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334666",
+   "fhrsid": 334666,
+   "name": "The Champion",
+   "address": "Public House 1 Wellington Terrace, Notting Hill Gate, LONDON",
+   "postcode": "W2 4LW",
+   "area": "notting-hill",
+   "lat": 51.50998,
+   "lng": -0.192552,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-02-19"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334183",
+   "fhrsid": 334183,
+   "name": "The Elgin",
+   "address": "96 Ladbroke Grove, LONDON",
+   "postcode": "W11 1PY",
+   "area": "notting-hill",
+   "lat": 51.516483,
+   "lng": -0.209043,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-10-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-939685",
+   "fhrsid": 939685,
+   "name": "The Globe",
+   "address": "103 Talbot Road, LONDON",
+   "postcode": "W11 2AT",
+   "area": "notting-hill",
+   "lat": 51.516622,
+   "lng": -0.200505,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-03-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334518",
+   "fhrsid": 334518,
+   "name": "The Goat Tavern",
+   "address": "PUBLIC HOUSE, 3A Kensington High Street, LONDON",
+   "postcode": "W8 5NP",
+   "area": "notting-hill",
+   "lat": 51.502055,
+   "lng": -0.188298,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-09-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1812726",
+   "fhrsid": 1812726,
+   "name": "The Good Oak",
+   "address": "137 Westbourne Park Road, London",
+   "postcode": "W2 5QL",
+   "area": "notting-hill",
+   "lat": 51.5186377,
+   "lng": -0.1975779,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-09-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1885418",
+   "fhrsid": 1885418,
+   "name": "The Hansom Cab",
+   "address": "84 Earl's Court Road, LONDON",
+   "postcode": "W8 6EG",
+   "area": "notting-hill",
+   "lat": 51.49614,
+   "lng": -0.197177,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": null,
+     "inspected": "1901-01-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1228495",
+   "fhrsid": 1228495,
+   "name": "The Hayden Pub & Rooms",
+   "address": "65 Westbourne Grove, London",
+   "postcode": "W2 4UJ",
+   "area": "notting-hill",
+   "lat": 51.5152787,
+   "lng": -0.1914266,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-22"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-457413",
+   "fhrsid": 457413,
+   "name": "The Hillgate",
+   "address": "24 Hillgate Street, LONDON",
+   "postcode": "W8 7SR",
+   "area": "notting-hill",
+   "lat": 51.508118,
+   "lng": -0.197742,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-06-12"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334487",
+   "fhrsid": 334487,
+   "name": "The Holland",
+   "address": "PUBLIC HOUSE, 25 Earl's Court Road, LONDON",
+   "postcode": "W8 6EB",
+   "area": "notting-hill",
+   "lat": 51.498293,
+   "lng": -0.198014,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-01-29"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-333951",
+   "fhrsid": 333951,
+   "name": "The Mall Tavern",
+   "address": "Public House, 71-73 Palace Gardens Terrace, LONDON",
+   "postcode": "W8 4RU",
+   "area": "notting-hill",
+   "lat": 51.508119,
+   "lng": -0.193778,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-04"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334306",
+   "fhrsid": 334306,
+   "name": "The Mitre",
+   "address": "PUBLIC HOUSE, 40 Holland Park Avenue, LONDON",
+   "postcode": "W11 3QY",
+   "area": "notting-hill",
+   "lat": 51.507874,
+   "lng": -0.204135,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-05-14"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1382582",
+   "fhrsid": 1382582,
+   "name": "The Pelican",
+   "address": "Public House, 45 All Saints Road, LONDON",
+   "postcode": "W11 1HE",
+   "area": "notting-hill",
+   "lat": 51.5183982849121,
+   "lng": -0.204355001449585,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-05-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-2000252",
+   "fhrsid": 2000252,
+   "name": "The Princess Royal",
+   "address": "47 Hereford Road, London",
+   "postcode": "W2 5AH",
+   "area": "notting-hill",
+   "lat": 51.5155509,
+   "lng": -0.1945002,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-08-12"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1863882",
+   "fhrsid": 1863882,
+   "name": "The Quiet Night Inn",
+   "address": "60 Great Western Road, London",
+   "postcode": "W11 1AB",
+   "area": "notting-hill",
+   "lat": 51.5206375,
+   "lng": -0.2007278,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2024-09-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-333882",
+   "fhrsid": 333882,
+   "name": "The Scarsdale",
+   "address": "Public House, 23A Edwardes Square, LONDON",
+   "postcode": "W8 6HE",
+   "area": "notting-hill",
+   "lat": 51.49773,
+   "lng": -0.19939,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-02-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1863942",
+   "fhrsid": 1863942,
+   "name": "The Sir Alexander Fleming",
+   "address": "Unit 53 5 Merchant Square, Hyde Park, London",
+   "postcode": "W2 1AS",
+   "area": "notting-hill",
+   "lat": 51.5188407,
+   "lng": -0.1730568,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-10-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1468074",
+   "fhrsid": 1468074,
+   "name": "The Stablehand",
+   "address": "4 Bathurst Street, London",
+   "postcode": "W2 2SD",
+   "area": "notting-hill",
+   "lat": 51.512989,
+   "lng": -0.1748137,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-03-31"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1587023",
+   "fhrsid": 1587023,
+   "name": "The Uxbridge Arms",
+   "address": "13 Uxbridge Street, LONDON",
+   "postcode": "W8 7TQ",
+   "area": "notting-hill",
+   "lat": 51.508402,
+   "lng": -0.198653,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-10-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-334618",
+   "fhrsid": 334618,
+   "name": "Windsor Castle",
+   "address": "Public House, 114 Campden Hill Road, LONDON",
+   "postcode": "W8 7AR",
+   "area": "notting-hill",
+   "lat": 51.506548,
+   "lng": -0.198625,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-06-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1612246",
+   "fhrsid": 1612246,
    "name": "3 Locks Brewery",
-   "address": "Arch 14 & 15, Water Lane",
+   "address": "Arch 14 & 15, Water Lane, London",
    "postcode": "NW1 8NZ",
    "area": "primrose-hill",
+   "lat": 51.542104,
+   "lng": -0.1432621,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-04-05"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "abbey-tavern-nw1-9qb",
+   "id": "fsa-611002",
+   "fhrsid": 611002,
    "name": "Abbey Tavern",
    "address": "124 Kentish Town Road",
    "postcode": "NW1 9QB",
    "area": "primrose-hill",
+   "lat": 51.546187,
+   "lng": -0.141548,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-28"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "backstage-bar-nw3-3hy",
+   "id": "fsa-1083487",
+   "fhrsid": 1083487,
    "name": "Backstage Bar",
-   "address": "The Royal Central School Of Speech And Drama Embassy Theatre, 62-64 Eton Avenue",
+   "address": "The Royal Central School Of Speech And Drama Embassy Theatre, 62-64 Eton Avenue, London",
    "postcode": "NW3 3HY",
    "area": "primrose-hill",
+   "lat": 51.5443267822266,
+   "lng": -0.174180001020432,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-10-20"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "be-at-one-limited-nw1-7jh",
+   "id": "fsa-1003604",
+   "fhrsid": 1003604,
    "name": "Be At One Limited",
-   "address": "55 Camden High Street",
+   "address": "55 Camden High Street, London",
    "postcode": "NW1 7JH",
    "area": "primrose-hill",
+   "lat": 51.5357709,
+   "lng": -0.1401032,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-03-01"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "belushi-s-nw1-0lt",
+   "id": "fsa-425491",
+   "fhrsid": 425491,
    "name": "Belushi's",
-   "address": "48-50 Camden High Street",
+   "address": "48-50 Camden High Street, London",
    "postcode": "NW1 0LT",
    "area": "primrose-hill",
+   "lat": 51.5361039,
+   "lng": -0.1395561,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-02-24"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "bucks-head-nw1-8qr",
+   "id": "fsa-1079380",
+   "fhrsid": 1079380,
    "name": "Bucks Head",
-   "address": "202 Camden High Street",
+   "address": "202 Camden High Street, London",
    "postcode": "NW1 8QR",
    "area": "primrose-hill",
+   "lat": 51.5402668,
+   "lng": -0.1434817,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-02-18"
+    }
    },
    "score": null,
    "notes": ""
@@ -411,28 +2191,31 @@
    "address": "Bull And Bush, North End Way",
    "postcode": "NW3 7HE",
    "area": "primrose-hill",
+   "lat": null,
+   "lng": null,
+   "source": "fsa-watchlist",
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "camden-eye-nw1-9nx",
+   "id": "fsa-1083488",
+   "fhrsid": 1083488,
    "name": "Camden Eye",
-   "address": "2 Kentish Town Road",
+   "address": "2 Kentish Town Road, London",
    "postcode": "NW1 9NX",
    "area": "primrose-hill",
+   "lat": 51.5395361,
+   "lng": -0.1421992,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": {
     "company_number": "12027725",
     "company_name": "CAMDEN EYE BAR AND RESTAURANT LIMITED",
@@ -440,22 +2223,27 @@
    },
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-11"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "camden-people-s-theatre-nw1-2py",
+   "id": "fsa-426083",
+   "fhrsid": 426083,
    "name": "Camden People's Theatre",
-   "address": "58-60 Hampstead Road",
+   "address": "58-60 Hampstead Road, London",
    "postcode": "NW1 2PY",
    "area": "primrose-hill",
+   "lat": 51.5261561,
+   "lng": -0.1383039,
    "trading_status": "trading",
    "needs_review": true,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": {
     "company_number": "03256616",
     "company_name": "CAMDEN PEOPLE'S THEATRE",
@@ -463,85 +2251,1763 @@
    },
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2018-02-22"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "camden-road-arms-nw1-9ea",
+   "id": "fsa-1608859",
+   "fhrsid": 1608859,
    "name": "Camden Road Arms",
-   "address": "102-106 Camden Road",
+   "address": "102-106 Camden Road, London",
    "postcode": "NW1 9EA",
    "area": "primrose-hill",
+   "lat": 51.5415428,
+   "lng": -0.1383103,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-03-24"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "crown-anchor-nw1-2hl",
+   "id": "fsa-1676102",
+   "fhrsid": 1676102,
+   "name": "Catering Sir Richard Steele",
+   "address": "97 Haverstock Hill, London",
+   "postcode": "NW3 4RL",
+   "area": "primrose-hill",
+   "lat": 51.5467948,
+   "lng": -0.1588502,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2025-08-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1560487",
+   "fhrsid": 1560487,
+   "name": "Coyote Ugly Saloon Ltd",
+   "address": "The Stables Market, Chalk Farm Road, London",
+   "postcode": "NW1 8AH",
+   "area": "primrose-hill",
+   "lat": 51.5423394,
+   "lng": -0.1477382,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 1,
+     "inspected": "2026-03-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426259",
+   "fhrsid": 426259,
    "name": "Crown & Anchor",
-   "address": "137 Drummond Street",
+   "address": "137 Drummond Street, London",
    "postcode": "NW1 2HL",
    "area": "primrose-hill",
+   "lat": 51.5268992,
+   "lng": -0.1369616,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-08-04"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "degusto-nw1-9ea",
-   "name": "DEGUSTO",
-   "address": "94 Camden Road",
+   "id": "fsa-1436657",
+   "fhrsid": 1436657,
+   "name": "Degusto",
+   "address": "94 Camden Road, London",
    "postcode": "NW1 9EA",
    "area": "primrose-hill",
+   "lat": 51.5412948,
+   "lng": -0.1385511,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2022-01-13"
+    }
    },
    "score": null,
    "notes": ""
   },
   {
-   "id": "doric-arch-nw1-2hs",
+   "id": "fsa-425427",
+   "fhrsid": 425427,
    "name": "Doric Arch",
-   "address": "Euston Station, Unit 50 Eversholt Street",
+   "address": "Euston Station, Unit 50 Eversholt Street, London",
    "postcode": "NW1 2HS",
    "area": "primrose-hill",
+   "lat": 51.5286674499512,
+   "lng": -0.133270993828774,
    "trading_status": "trading",
    "needs_review": false,
-   "source": "fsa-watchlist",
+   "source": "fsa",
    "operator": null,
    "metrics": {
     "google": null,
-    "hygiene": null,
-    "companies_house": null,
-    "rateable_value": null
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2018-01-09"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424336",
+   "fhrsid": 424336,
+   "name": "Earl of Camden",
+   "address": "55 Parkway, London",
+   "postcode": "NW1 7PN",
+   "area": "primrose-hill",
+   "lat": 51.5378805,
+   "lng": -0.1444152,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-12-04"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425824",
+   "fhrsid": 425824,
+   "name": "Edinboro Castle",
+   "address": "57 Mornington Terrace, London",
+   "postcode": "NW1 7RU",
+   "area": "primrose-hill",
+   "lat": 51.5360641,
+   "lng": -0.1449938,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-06-26"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-733728",
+   "fhrsid": 733728,
+   "name": "Escape Bar & Restaurant",
+   "address": "2 Lidlington Place, London",
+   "postcode": "NW1 2JU",
+   "area": "primrose-hill",
+   "lat": 51.5326443,
+   "lng": -0.1374479,
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2024-03-04"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-552771",
+   "fhrsid": 552771,
+   "name": "Euston Tap",
+   "address": "West Lodge, 190 Euston Road",
+   "postcode": "NW1 2EF",
+   "area": "primrose-hill",
+   "lat": 51.526981,
+   "lng": -0.132599,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-02-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1105498",
+   "fhrsid": 1105498,
+   "name": "Exmouth Arms Euston",
+   "address": "1 Starcross Street, London",
+   "postcode": "NW1 2HR",
+   "area": "primrose-hill",
+   "lat": 51.527929,
+   "lng": -0.1366889,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-09-25"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423955",
+   "fhrsid": 423955,
+   "name": "Freemasons Arms",
+   "address": "32 Downshire Hill, London",
+   "postcode": "NW3 1NT",
+   "area": "primrose-hill",
+   "lat": 51.5568985,
+   "lng": -0.1689443,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-04-30"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-759316",
+   "fhrsid": 759316,
+   "name": "Globe Lawn Tennis Club Bar",
+   "address": "190a Haverstock Hill, London",
+   "postcode": "NW3 2AL",
+   "area": "primrose-hill",
+   "lat": 51.5504938,
+   "lng": -0.1642108,
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2015-04-22"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1886377",
+   "fhrsid": 1886377,
+   "name": "Globe Public House",
+   "address": "The Globe 43-47 Marylebone Road, London",
+   "postcode": "NW1 5JY",
+   "area": "primrose-hill",
+   "lat": 51.521919,
+   "lng": -0.157,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-01-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424945",
+   "fhrsid": 424945,
+   "name": "Green Note Ltd",
+   "address": "106 Parkway, London",
+   "postcode": "NW1 7AN",
+   "area": "primrose-hill",
+   "lat": 51.5372654,
+   "lng": -0.1458966,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-09"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424960",
+   "fhrsid": 424960,
+   "name": "Hampstead Theatre Ltd",
+   "address": "1 Eton Avenue, London",
+   "postcode": "NW3 3EL",
+   "area": "primrose-hill",
+   "lat": 51.5452692,
+   "lng": -0.1630655,
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-03-06"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1040374",
+   "fhrsid": 1040374,
+   "name": "King William IV",
+   "address": "Public House And Premises, 77 Hampstead High Street, London",
+   "postcode": "NW3 1RE",
+   "area": "primrose-hill",
+   "lat": 51.5554733276367,
+   "lng": -0.176229000091553,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 0,
+     "inspected": "2026-06-09"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1722413",
+   "fhrsid": 1722413,
+   "name": "Lock Tavern",
+   "address": "35 Chalk Farm Road, London",
+   "postcode": "NW1 8AJ",
+   "area": "primrose-hill",
+   "lat": 51.5428427,
+   "lng": -0.1477177,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2024-08-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1918474",
+   "fhrsid": 1918474,
+   "name": "Lord Stanley",
+   "address": "51 Camden Park Road, London",
+   "postcode": "NW1 9BH",
+   "area": "primrose-hill",
+   "lat": 51.5472045,
+   "lng": -0.1295984,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-09-10"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424083",
+   "fhrsid": 424083,
+   "name": "Lyttleton Arms",
+   "address": "1 Camden High Street, London",
+   "postcode": "NW1 7JE",
+   "area": "primrose-hill",
+   "lat": 51.5346174,
+   "lng": -0.139386,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-09-21"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424193",
+   "fhrsid": 424193,
+   "name": "North Star",
+   "address": "104 Finchley Road, London",
+   "postcode": "NW3 5JJ",
+   "area": "primrose-hill",
+   "lat": 51.5459174,
+   "lng": -0.1781109,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-03-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426390",
+   "fhrsid": 426390,
+   "name": "O'Neill's",
+   "address": "73-77 Euston Road, London",
+   "postcode": "NW1 2QS",
+   "area": "primrose-hill",
+   "lat": 51.5288586,
+   "lng": -0.1261696,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-11-04"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423974",
+   "fhrsid": 423974,
+   "name": "Old Oak Hampstead",
+   "address": "1 Mansfield Road, London",
+   "postcode": "NW3 2JD",
+   "area": "primrose-hill",
+   "lat": 51.5548389,
+   "lng": -0.1511396,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-09-02"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423942",
+   "fhrsid": 423942,
+   "name": "Oxford Arms",
+   "address": "265 Camden High Street, London",
+   "postcode": "NW1 7BU",
+   "area": "primrose-hill",
+   "lat": 51.5405941,
+   "lng": -0.144276,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2026-09-07"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425254",
+   "fhrsid": 425254,
+   "name": "Princess of Wales",
+   "address": "22 Chalcot Road, London",
+   "postcode": "NW1 8LL",
+   "area": "primrose-hill",
+   "lat": 51.5404231,
+   "lng": -0.1539593,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-12"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424030",
+   "fhrsid": 424030,
+   "name": "Queens Head & Artichoke",
+   "address": "32 Albany Street, London",
+   "postcode": "NW1 4EA",
+   "area": "primrose-hill",
+   "lat": 51.5257709,
+   "lng": -0.1440716,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-15"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424185",
+   "fhrsid": 424185,
+   "name": "Royal George",
+   "address": "8-14 Eversholt Street, London",
+   "postcode": "NW1 1DG",
+   "area": "primrose-hill",
+   "lat": 51.5282961,
+   "lng": -0.1314982,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-03-18"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1016184",
+   "fhrsid": 1016184,
+   "name": "Simmons",
+   "address": "7-9 Kentish Town Road, London",
+   "postcode": "NW1 8NH",
+   "area": "primrose-hill",
+   "lat": 51.5396137,
+   "lng": -0.1425566,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2020-02-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1680199",
+   "fhrsid": 1680199,
+   "name": "Sir Richard Steele Pub",
+   "address": "97 Haverstock Hill, London",
+   "postcode": "NW3 4RL",
+   "area": "primrose-hill",
+   "lat": 51.5467948,
+   "lng": -0.1588502,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-08-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426128",
+   "fhrsid": 426128,
+   "name": "Slatterys Bar",
+   "address": "69 Camden Road, London",
+   "postcode": "NW1 9EU",
+   "area": "primrose-hill",
+   "lat": 51.5424295,
+   "lng": -0.1380866,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2023-02-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1832040",
+   "fhrsid": 1832040,
+   "name": "Slawek Kitchen",
+   "address": "77 Hampstead High Street, London",
+   "postcode": "NW3 1RE",
+   "area": "primrose-hill",
+   "lat": 51.5556094,
+   "lng": -0.1768292,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 0,
+     "inspected": "2026-06-09"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-952268",
+   "fhrsid": 952268,
+   "name": "Spiritual Bar",
+   "address": "4 Ferdinand Street, London",
+   "postcode": "NW1 8ER",
+   "area": "primrose-hill",
+   "lat": 51.5432125,
+   "lng": -0.1489285,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2017-03-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425822",
+   "fhrsid": 425822,
+   "name": "Spread Eagle",
+   "address": "141 Albert Street, London",
+   "postcode": "NW1 7NB",
+   "area": "primrose-hill",
+   "lat": 51.5376092,
+   "lng": -0.1448877,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-03-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1105525",
+   "fhrsid": 1105525,
+   "name": "Tapping the Admiral",
+   "address": "Tavern In The Town Public House, 77 Castle Road",
+   "postcode": "NW1 8SU",
+   "area": "primrose-hill",
+   "lat": 51.5453563,
+   "lng": -0.1463032,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-10-17"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1085452",
+   "fhrsid": 1085452,
+   "name": "The Barrel Vault",
+   "address": "Unit 23 St Pancras International Station, Pancras Road, London",
+   "postcode": "NW1 2QL",
+   "area": "primrose-hill",
+   "lat": 51.5314298,
+   "lng": -0.1261217,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-04-15"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425883",
+   "fhrsid": 425883,
+   "name": "The Black Heart & LD's Kitchen",
+   "address": "2-3 Greenland Place, London",
+   "postcode": "NW1 0AP",
+   "area": "primrose-hill",
+   "lat": 51.5388289,
+   "lng": -0.1418387,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-02-03"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425869",
+   "fhrsid": 425869,
+   "name": "The Blues Kitchen",
+   "address": "111-113 Camden High Street, London",
+   "postcode": "NW1 7JN",
+   "area": "primrose-hill",
+   "lat": 51.537075,
+   "lng": -0.1412468,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-15"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1042619",
+   "fhrsid": 1042619,
+   "name": "The Camden Assembley",
+   "address": "49 Chalk Farm Road, London",
+   "postcode": "NW1 8AN",
+   "area": "primrose-hill",
+   "lat": 51.5431191,
+   "lng": -0.1492785,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2024-09-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425752",
+   "fhrsid": 425752,
+   "name": "The Camden Head",
+   "address": "100 Camden High Street",
+   "postcode": "NW1 0LU",
+   "area": "primrose-hill",
+   "lat": 51.537522,
+   "lng": -0.14118,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2024-07-04"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426181",
+   "fhrsid": 426181,
+   "name": "The Cock Tavern",
+   "address": "23 Phoenix Road, London",
+   "postcode": "NW1 1HB",
+   "area": "primrose-hill",
+   "lat": 51.531162,
+   "lng": -0.1313231,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-03-05"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425911",
+   "fhrsid": 425911,
+   "name": "The Dublin Castle",
+   "address": "94 Parkway, London",
+   "postcode": "NW1 7AN",
+   "area": "primrose-hill",
+   "lat": 51.5374491,
+   "lng": -0.1455719,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2025-06-17"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1492520",
+   "fhrsid": 1492520,
+   "name": "The Duke of Hamilton",
+   "address": "23-25 New End, London",
+   "postcode": "NW3 1JD",
+   "area": "primrose-hill",
+   "lat": 51.5589015,
+   "lng": -0.1774622,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-09-22"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424874",
+   "fhrsid": 424874,
+   "name": "The Electric Ballroom",
+   "address": "184 Camden High Street, London",
+   "postcode": "NW1 8QP",
+   "area": "primrose-hill",
+   "lat": 51.5396919,
+   "lng": -0.1429571,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2022-10-31"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425608",
+   "fhrsid": 425608,
+   "name": "The Elephants Head",
+   "address": "224 Camden High Street, London",
+   "postcode": "NW1 8QR",
+   "area": "primrose-hill",
+   "lat": 51.5407144,
+   "lng": -0.143925,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-06-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425238",
+   "fhrsid": 425238,
+   "name": "The Engineer",
+   "address": "65 Gloucester Avenue, London",
+   "postcode": "NW1 8JH",
+   "area": "primrose-hill",
+   "lat": 51.5400137,
+   "lng": -0.1508033,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2024-04-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424741",
+   "fhrsid": 424741,
+   "name": "The Enterprise",
+   "address": "2 Haverstock Hill, London",
+   "postcode": "NW3 2BL",
+   "area": "primrose-hill",
+   "lat": 51.5442504882813,
+   "lng": -0.153054997324944,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-08-13"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424499",
+   "fhrsid": 424499,
+   "name": "The Euston Flyer",
+   "address": "83-87 Euston Road, London",
+   "postcode": "NW1 2RA",
+   "area": "primrose-hill",
+   "lat": 51.5286701,
+   "lng": -0.1267541,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2017-05-08"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424531",
+   "fhrsid": 424531,
+   "name": "The Flask Public House",
+   "address": "14 Flask Walk, London",
+   "postcode": "NW3 1HE",
+   "area": "primrose-hill",
+   "lat": 51.5565611,
+   "lng": -0.1773105,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-23"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424566",
+   "fhrsid": 424566,
+   "name": "The Garden Gate",
+   "address": "14 South End Road, London",
+   "postcode": "NW3 2QE",
+   "area": "primrose-hill",
+   "lat": 51.5546604,
+   "lng": -0.1655577,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1199705",
+   "fhrsid": 1199705,
+   "name": "The George",
+   "address": "250 Haverstock Hill, London",
+   "postcode": "NW3 2AE",
+   "area": "primrose-hill",
+   "lat": 51.5524376,
+   "lng": -0.1671761,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-09-17"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1251691",
+   "fhrsid": 1251691,
+   "name": "The Golden Lion",
+   "address": "88 Royal College Street, London",
+   "postcode": "NW1 0TH",
+   "area": "primrose-hill",
+   "lat": 51.5391463,
+   "lng": -0.1357692,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-04-29"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425792",
+   "fhrsid": 425792,
+   "name": "The Good Mixer",
+   "address": "28-30 Inverness Street, London",
+   "postcode": "NW1 7HJ",
+   "area": "primrose-hill",
+   "lat": 51.5395115,
+   "lng": -0.1446228,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-01-10"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425070",
+   "fhrsid": 425070,
+   "name": "The Hawley Arms",
+   "address": "2 Castlehaven Road, London",
+   "postcode": "NW1 8QU",
+   "area": "primrose-hill",
+   "lat": 51.5419422,
+   "lng": -0.1453604,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2023-09-20"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424489",
+   "fhrsid": 424489,
+   "name": "The Holly Bush",
+   "address": "22 Holly Mount, London",
+   "postcode": "NW3 6SG",
+   "area": "primrose-hill",
+   "lat": 51.5578783,
+   "lng": -0.1793208,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-08-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424927",
+   "fhrsid": 424927,
+   "name": "The Ice Wharf",
+   "address": "Suffolk Wharf, 28-30 Jamestown Road, London",
+   "postcode": "NW1 7BY",
+   "area": "primrose-hill",
+   "lat": 51.5401840209961,
+   "lng": -0.1474220007658,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-12"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425239",
+   "fhrsid": 425239,
+   "name": "The Lansdowne",
+   "address": "90 Gloucester Avenue, London",
+   "postcode": "NW1 8HX",
+   "area": "primrose-hill",
+   "lat": 51.5414832,
+   "lng": -0.1533251,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 1,
+     "inspected": "2026-09-24"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-423931",
+   "fhrsid": 423931,
+   "name": "The Old Bull & Bush",
+   "address": "Bull And Bush, North End Way, London",
+   "postcode": "NW3 7HE",
+   "area": "primrose-hill",
+   "lat": 51.5675414,
+   "lng": -0.1825567,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-08-05"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425100",
+   "fhrsid": 425100,
+   "name": "The Old Eagle Public House",
+   "address": "251 Royal College Street, London",
+   "postcode": "NW1 9LU",
+   "area": "primrose-hill",
+   "lat": 51.5427839,
+   "lng": -0.1394566,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-06-17"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424211",
+   "fhrsid": 424211,
+   "name": "The Pembroke Castle",
+   "address": "150 Gloucester Avenue, London",
+   "postcode": "NW1 8JA",
+   "area": "primrose-hill",
+   "lat": 51.5425424,
+   "lng": -0.1549118,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-11-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425260",
+   "fhrsid": 425260,
+   "name": "The Queens",
+   "address": "49 Regent's Park Road, London",
+   "postcode": "NW1 8XD",
+   "area": "primrose-hill",
+   "lat": 51.5406179,
+   "lng": -0.1577729,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-07"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426393",
+   "fhrsid": 426393,
+   "name": "The Rocket",
+   "address": "120 Euston Road, London",
+   "postcode": "NW1 2AL",
+   "area": "primrose-hill",
+   "lat": 51.5283087,
+   "lng": -0.1289026,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-08-30"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1045546",
+   "fhrsid": 1045546,
+   "name": "The Roebuck",
+   "address": "15 Pond Street, London",
+   "postcode": "NW3 2PN",
+   "area": "primrose-hill",
+   "lat": 51.5538465,
+   "lng": -0.1675667,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2026-02-11"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425660",
+   "fhrsid": 425660,
+   "name": "The Sheephaven Bay",
+   "address": "2 Mornington Street, London",
+   "postcode": "NW1 7QD",
+   "area": "primrose-hill",
+   "lat": 51.5351754,
+   "lng": -0.1416847,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2023-03-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1109840",
+   "fhrsid": 1109840,
+   "name": "The Signal Box PH",
+   "address": "Unit 53 Euston Railway Station, Eversholt Street, London",
+   "postcode": "NW1 2HS",
+   "area": "primrose-hill",
+   "lat": 51.5286674499512,
+   "lng": -0.133270993828774,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2024-09-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-414674",
+   "fhrsid": 414674,
+   "name": "The Sir John Balcombe Pub",
+   "address": "Basement 21 Balcombe Street, London",
+   "postcode": "NW1 6HE",
+   "area": "primrose-hill",
+   "lat": 51.5234958,
+   "lng": -0.1617799,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-07-27"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-757141",
+   "fhrsid": 757141,
+   "name": "The Spaniards Inn",
+   "address": "The Spaniards Inn  Spaniards Road London",
+   "postcode": "NW3 7JJ",
+   "area": "primrose-hill",
+   "lat": 51.569738,
+   "lng": -0.174166,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-06-22"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1077466",
+   "fhrsid": 1077466,
+   "name": "The Stag",
+   "address": "67 Fleet Road, London",
+   "postcode": "NW3 2QU",
+   "area": "primrose-hill",
+   "lat": 51.5533575,
+   "lng": -0.1616,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-07-22"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-950016",
+   "fhrsid": 950016,
+   "name": "The Station Pantry",
+   "address": "Unit 31 St Pancras International Station, Pancras Road",
+   "postcode": "NW1 2QP",
+   "area": "primrose-hill",
+   "lat": 51.5314298,
+   "lng": -0.1261217,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2026-04-01"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-426240",
+   "fhrsid": 426240,
+   "name": "The Union Regent\u2019s Place",
+   "address": "11 Triton Street",
+   "postcode": "NW1 3TS",
+   "area": "primrose-hill",
+   "lat": 51.533368,
+   "lng": -0.146633,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2024-06-28"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425038",
+   "fhrsid": 425038,
+   "name": "The Washington",
+   "address": "50 England's Lane, London",
+   "postcode": "NW3 4UE",
+   "area": "primrose-hill",
+   "lat": 51.5457695,
+   "lng": -0.1628578,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-07-21"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-424265",
+   "fhrsid": 424265,
+   "name": "The Wells Tavern",
+   "address": "30 Well Walk, London",
+   "postcode": "NW3 1BX",
+   "area": "primrose-hill",
+   "lat": 51.5587246,
+   "lng": -0.1736029,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 3,
+     "inspected": "2026-07-29"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-425579",
+   "fhrsid": 425579,
+   "name": "The World's End",
+   "address": "174 Camden High Street, London",
+   "postcode": "NW1 0NE",
+   "area": "primrose-hill",
+   "lat": 51.5391907,
+   "lng": -0.1419681,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 5,
+     "inspected": "2025-10-29"
+    }
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "fsa-1534835",
+   "fhrsid": 1534835,
+   "name": "Zodiac Bar",
+   "address": "119 Hampstead Road, London",
+   "postcode": "NW1 3EE",
+   "area": "primrose-hill",
+   "lat": 51.5280741,
+   "lng": -0.1390329,
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "osm": null,
+    "hygiene": {
+     "rating": 4,
+     "inspected": "2025-07-15"
+    }
    },
    "score": null,
    "notes": ""

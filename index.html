@@ -1602,7 +1602,10 @@
       var m = pub.metrics || {};
       if (m.google && m.google.rating != null)
         rows.appendChild(row("Google", m.google.rating + " ★ (" + Number(m.google.reviews || 0).toLocaleString() + " reviews)"));
-      if (m.hygiene && m.hygiene.rating != null) rows.appendChild(row("Hygiene rating", m.hygiene.rating + "/5"));
+      if (m.hygiene && m.hygiene.rating != null) {
+        var insp = m.hygiene.inspected ? " (inspected " + new Date(m.hygiene.inspected).toLocaleDateString("en-GB", { month: "short", year: "numeric" }) + ")" : "";
+        rows.appendChild(row("Hygiene rating", m.hygiene.rating + "/5" + insp));
+      }
       if (pub.operator && pub.operator.company_name) rows.appendChild(row("Operator", pub.operator.company_name));
       if (pub.score && pub.score.value != null)
         rows.appendChild(row("Trading score", pub.score.value + "/100 (" + (pub.score.confidence || "low") + " confidence)"));
@@ -1625,7 +1628,10 @@
     function buildPubs(pubs) {
       var groups = {};
       pubs.forEach(function (pub) {
-        var loc = locate(norm(pub.postcode));
+        // Exact coordinates from the dataset when present; postcode centre otherwise.
+        var loc = pub.lat != null && pub.lng != null
+          ? { ll: [pub.lat, pub.lng], approx: false }
+          : locate(norm(pub.postcode));
         if (!loc) return;
         var key = loc.ll[0].toFixed(5) + "," + loc.ll[1].toFixed(5);
         (groups[key] = groups[key] || []).push({ pub: pub, loc: loc });
@@ -1658,8 +1664,11 @@
             return p.trading_status === "trading" && !p.needs_review && p.postcode;
           });
           if (!pubs.length) return;
-          var pk = [];
-          pubs.forEach(function (p) { var k = norm(p.postcode); if (pk.indexOf(k) < 0) pk.push(k); });
+          var pk = [];   // only pubs without coordinates need a postcode lookup
+          pubs.forEach(function (p) {
+            var k = norm(p.postcode);
+            if (p.lat == null && pk.indexOf(k) < 0) pk.push(k);
+          });
           return geocode(pk).then(function () { buildPubs(pubs); });
         })
         .catch(function () {});

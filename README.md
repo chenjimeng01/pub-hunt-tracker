@@ -17,6 +17,11 @@ postcodes.io and cached in localStorage — new cards appear on the map automati
 no coordinates to maintain. A card whose `data-pc` is only an outcode (e.g. `W1T`) is
 drawn at the outcode centre as an approximate (dashed) pin, so prefer a full postcode.
 
+Trading pubs (orange diamonds) come from `data/pubs.json`, built by
+`python3 scripts/build_pubs.py` from the free FSA food-hygiene register (exact coordinates,
+hygiene rating). Re-run it occasionally to refresh; hand edits in the file survive. Google
+ratings are a planned next stage — see `docs/active-pubs-plan.md`.
+
 ## Refresh procedure (automated, Mon & Thu)
 
 A scheduled cloud agent refreshes the listings twice a week. The procedure:
