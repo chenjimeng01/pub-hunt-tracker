@@ -19,6 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 WATCHLIST = ROOT / "watchlist.json"
+CHAINS = ROOT / "data" / "chains.json"
 OUT = ROOT / "data" / "pubs.json"
 FSA = "https://api.ratings.food.gov.uk/Establishments"
 PUB_BAR_NIGHTCLUB = 7843
@@ -70,6 +71,13 @@ def tidy(s):
     out = re.sub(r"[A-Za-z]+('[A-Za-z]+)?", lambda m: m.group(0).capitalize() if "'" not in m.group(0)
                  else m.group(0).split("'")[0].capitalize() + "'" + m.group(0).split("'")[1].lower(), s.lower())
     return re.sub(r"\b(Nw|Sw|Se|Ne|Wc|W|E|N)(\d{1,2}[A-Za-z]?)\b", lambda m: m.group(0).upper(), out)  # postcodes
+
+
+def detect_chain(name, brands):
+    for brand, pattern in brands.items():
+        if re.search(pattern, name, re.I):
+            return brand
+    return None
 
 
 def district(pc):
@@ -128,10 +136,17 @@ def from_fsa(e):
     }
 
 
+BRANDS = json.loads(CHAINS.read_text())["brands"]
+
+
 def blank(base):
     base.setdefault("trading_status", "trading")        # trading | closed | unknown
     base.setdefault("needs_review", bool(NOT_A_PUB.search(base["name"])))
     base.setdefault("source", "fsa")
+    # Chain brand if recognisable from the name, else null (= treated as independent).
+    # Set by hand for pub-company pubs with individual names; a brand already set is kept.
+    if not base.get("chain"):
+        base["chain"] = detect_chain(base["name"], BRANDS)
     base.setdefault("lat", None)
     base.setdefault("lng", None)
     base.setdefault("operator", None)
@@ -214,7 +229,8 @@ def main():
     for p in out:
         by_area[p["area"]] = by_area.get(p["area"], 0) + 1
     print(f"{len(out)} premises -> {OUT.relative_to(ROOT)}  {by_area}; "
-          f"{sum(p['needs_review'] for p in out)} need review", file=sys.stderr)
+          f"{sum(p['needs_review'] for p in out)} need review; "
+          f"{sum(bool(p['chain']) for p in out)} chain", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -56,4 +56,4 @@ Use Companies House by hand for individual shortlisted pubs instead.
 ## Decisions needed
 
 1. Google Cloud account + key with a hard quota cap (stage 2).
-2. Chains: include (Nicholson's, Greene King…) or independents only?
+2. ~~Chains~~ — decided: independents only. `data/chains.json` flags obvious brands by name; pub-company pubs with individual names (Fuller's, Young's, Greene King) need flagging by hand via `chain` in pubs.json.

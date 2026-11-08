@@ -1,0 +1,20 @@
+{
+ "_note": "Brands recognisable from the premises name. Regexes, case-insensitive. Pub-company pubs with their own individual names (Fuller's, Young's, Greene King...) cannot be told apart by name; flag those by hand via the `chain` field in pubs.json.",
+ "brands": {
+  "Be At One": "be at one",
+  "BrewDog": "brew ?dog",
+  "O'Neill's": "o'?neill'?s",
+  "Belushi's": "belushi",
+  "Coyote Ugly": "coyote ugly",
+  "All Bar One": "all bar one",
+  "Slug & Lettuce": "slug (&|and) lettuce",
+  "Walkabout": "walkabout",
+  "Revolution": "^revolution\\b",
+  "Pitcher & Piano": "pitcher (&|and) piano",
+  "Yates": "^yates",
+  "JD Wetherspoon": "wetherspoon|moon (on|under)|^the .*\\(wetherspoon",
+  "Nicholson's": "nicholson",
+  "Harvester": "harvester",
+  "Lucky Saint": "lucky saint"
+ }
+}
