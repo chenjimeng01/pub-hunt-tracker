@@ -1,0 +1,550 @@
+{
+ "schema_version": 1,
+ "generated": "2026-11-08",
+ "pubs": [
+  {
+   "id": "black-horse-w1t-1hl",
+   "name": "Black Horse",
+   "address": "6 RATHBONE PLACE, LONDON",
+   "postcode": "W1T 1HL",
+   "area": "fitzrovia",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "bourne-hollingsworth-w1t-1jf",
+   "name": "Bourne & Hollingsworth",
+   "address": "28 Rathbone Place",
+   "postcode": "W1T 1JF",
+   "area": "fitzrovia",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": {
+    "company_number": "08471250",
+    "company_name": "BOURNE & HOLLINGSWORTH BAR LTD",
+    "match_basis": "registered office = premises postcode"
+   },
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "dominion-theatre-w1t-7aq",
+   "name": "Dominion Theatre",
+   "address": "The Dominion Theatre, 268-269 Tottenham Court Road",
+   "postcode": "W1T 7AQ",
+   "area": "fitzrovia",
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "be-at-one-w1g-0eh",
+   "name": "Be At One",
+   "address": "94 WIMPOLE STREET, LONDON",
+   "postcode": "W1G 0EH",
+   "area": "marylebone",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "burlock-and-fam-bar-w1u-1lg",
+   "name": "Burlock and Fam Bar",
+   "address": "31 DUKE STREET, LONDON",
+   "postcode": "W1U 1LG",
+   "area": "marylebone",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "clarette-w1u-7hs",
+   "name": "Clarette",
+   "address": "44 BLANDFORD STREET, MARYLEBONE HIGH STREET, LONDON",
+   "postcode": "W1U 7HS",
+   "area": "marylebone",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "concept-club-w1u-1ln",
+   "name": "Concept Club",
+   "address": "37 DUKE STREET, LONDON",
+   "postcode": "W1U 1LN",
+   "area": "marylebone",
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "amaro-bar-w8-5np",
+   "name": "Amaro Bar",
+   "address": "Ground Floor, 15 Kensington High Street, LONDON",
+   "postcode": "W8 5NP",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "brewdog-paddington-w2-1jx",
+   "name": "Brewdog Paddington",
+   "address": "UNIT 1 WEST END QUAY SOUTH WHARF ROAD, LONDON",
+   "postcode": "W2 1JX",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "castle-ph-w11-4ua",
+   "name": "Castle PH",
+   "address": "Public House, 100 Holland Park Avenue, LONDON",
+   "postcode": "W11 4UA",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "churchill-arms-w8-7ln",
+   "name": "Churchill Arms",
+   "address": "PUBLIC HOUSE, 119 Kensington Church Street, LONDON",
+   "postcode": "W8 7LN",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "coronet-cinema-and-print-room-at-the-coronet-w11-3lb",
+   "name": "Coronet Cinema and Print Room at the Coronet",
+   "address": "103-111 Notting Hill Gate, LONDON",
+   "postcode": "W11 3LB",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "devonshire-arms-w8-6la",
+   "name": "Devonshire Arms",
+   "address": "Public House  The, 37 Marloes Road, LONDON",
+   "postcode": "W8 6LA",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "drop-kensington-w8-6ed",
+   "name": "Drop Kensington",
+   "address": "37 Earl's Court Road, LONDON",
+   "postcode": "W8 6ED",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "duke-of-wellington-ph-w11-2ed",
+   "name": "Duke of Wellington PH",
+   "address": "179 Portobello Road, LONDON",
+   "postcode": "W11 2ED",
+   "area": "notting-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "3-locks-brewery-nw1-8nz",
+   "name": "3 Locks Brewery",
+   "address": "Arch 14 & 15, Water Lane",
+   "postcode": "NW1 8NZ",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "abbey-tavern-nw1-9qb",
+   "name": "Abbey Tavern",
+   "address": "124 Kentish Town Road",
+   "postcode": "NW1 9QB",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "backstage-bar-nw3-3hy",
+   "name": "Backstage Bar",
+   "address": "The Royal Central School Of Speech And Drama Embassy Theatre, 62-64 Eton Avenue",
+   "postcode": "NW3 3HY",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "be-at-one-limited-nw1-7jh",
+   "name": "Be At One Limited",
+   "address": "55 Camden High Street",
+   "postcode": "NW1 7JH",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "belushi-s-nw1-0lt",
+   "name": "Belushi's",
+   "address": "48-50 Camden High Street",
+   "postcode": "NW1 0LT",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "bucks-head-nw1-8qr",
+   "name": "Bucks Head",
+   "address": "202 Camden High Street",
+   "postcode": "NW1 8QR",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "bull-bush-nw3-7he",
+   "name": "Bull & Bush",
+   "address": "Bull And Bush, North End Way",
+   "postcode": "NW3 7HE",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "camden-eye-nw1-9nx",
+   "name": "Camden Eye",
+   "address": "2 Kentish Town Road",
+   "postcode": "NW1 9NX",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": {
+    "company_number": "12027725",
+    "company_name": "CAMDEN EYE BAR AND RESTAURANT LIMITED",
+    "match_basis": "registered office = premises postcode"
+   },
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "camden-people-s-theatre-nw1-2py",
+   "name": "Camden People's Theatre",
+   "address": "58-60 Hampstead Road",
+   "postcode": "NW1 2PY",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": true,
+   "source": "fsa-watchlist",
+   "operator": {
+    "company_number": "03256616",
+    "company_name": "CAMDEN PEOPLE'S THEATRE",
+    "match_basis": "registered office = premises postcode"
+   },
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "camden-road-arms-nw1-9ea",
+   "name": "Camden Road Arms",
+   "address": "102-106 Camden Road",
+   "postcode": "NW1 9EA",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "crown-anchor-nw1-2hl",
+   "name": "Crown & Anchor",
+   "address": "137 Drummond Street",
+   "postcode": "NW1 2HL",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "degusto-nw1-9ea",
+   "name": "DEGUSTO",
+   "address": "94 Camden Road",
+   "postcode": "NW1 9EA",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  },
+  {
+   "id": "doric-arch-nw1-2hs",
+   "name": "Doric Arch",
+   "address": "Euston Station, Unit 50 Eversholt Street",
+   "postcode": "NW1 2HS",
+   "area": "primrose-hill",
+   "trading_status": "trading",
+   "needs_review": false,
+   "source": "fsa-watchlist",
+   "operator": null,
+   "metrics": {
+    "google": null,
+    "hygiene": null,
+    "companies_house": null,
+    "rateable_value": null
+   },
+   "score": null,
+   "notes": ""
+  }
+ ]
+}

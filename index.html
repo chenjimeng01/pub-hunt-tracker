@@ -14,7 +14,7 @@
     --bg: #f4f6f9; --surface: #ffffff; --surface-2: #f1f4f8; --ink: #1f2937;
     --ink-soft: #4b5563; --ink-faint: #6b7280; --line: #e3e7ed; --line-strong: #cfd6df;
     --accent: #1d5fd1; --accent-soft: #2f6fdd; --accent-wash: #e9f0fc;
-    --green: #166a3b; --green-wash: #e5f4ea;
+    --green: #166a3b; --green-wash: #e5f4ea; --pub: #c2410c; --pub-wash: #fdeee4;
     --amber: #a15c07; --amber-wash: #fdf1dc; --blue: #1d5fd1; --blue-wash: #e9f0fc;
     --shadow: 0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.06);
     --radius: 10px;
@@ -27,7 +27,7 @@
     --bg: #0f141b; --surface: #182029; --surface-2: #202a35; --ink: #eef1f5;
     --ink-soft: #c2cad4; --ink-faint: #93a0ae; --line: #2b3643; --line-strong: #3b4858;
     --accent: #6aa5ff; --accent-soft: #86b6ff; --accent-wash: #1b2c47;
-    --green: #6fcf97; --green-wash: #17301f;
+    --green: #6fcf97; --green-wash: #17301f; --pub: #fb923c; --pub-wash: #3a2616;
     --amber: #f0b45b; --amber-wash: #392c14; --blue: #6aa5ff; --blue-wash: #1b2c47;
     --shadow: 0 1px 2px rgba(0,0,0,.35), 0 1px 3px rgba(0,0,0,.3);
     }
@@ -36,7 +36,7 @@
     --bg: #f4f6f9; --surface: #ffffff; --surface-2: #f1f4f8; --ink: #1f2937;
     --ink-soft: #4b5563; --ink-faint: #6b7280; --line: #e3e7ed; --line-strong: #cfd6df;
     --accent: #1d5fd1; --accent-soft: #2f6fdd; --accent-wash: #e9f0fc;
-    --green: #166a3b; --green-wash: #e5f4ea;
+    --green: #166a3b; --green-wash: #e5f4ea; --pub: #c2410c; --pub-wash: #fdeee4;
     --amber: #a15c07; --amber-wash: #fdf1dc; --blue: #1d5fd1; --blue-wash: #e9f0fc;
     --shadow: 0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.06);
   }
@@ -44,7 +44,7 @@
     --bg: #0f141b; --surface: #182029; --surface-2: #202a35; --ink: #eef1f5;
     --ink-soft: #c2cad4; --ink-faint: #93a0ae; --line: #2b3643; --line-strong: #3b4858;
     --accent: #6aa5ff; --accent-soft: #86b6ff; --accent-wash: #1b2c47;
-    --green: #6fcf97; --green-wash: #17301f;
+    --green: #6fcf97; --green-wash: #17301f; --pub: #fb923c; --pub-wash: #3a2616;
     --amber: #f0b45b; --amber-wash: #392c14; --blue: #6aa5ff; --blue-wash: #1b2c47;
     --shadow: 0 1px 2px rgba(0,0,0,.35), 0 1px 3px rgba(0,0,0,.3);
   }
@@ -310,6 +310,14 @@
     border: 2.5px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.45);
   }
   .pin.sale { background: var(--green); }
+  .pin.pub { background: var(--pub); border-radius: 4px; transform: rotate(45deg) scale(.8); }
+  .leaflet-marker-icon.pin-wrap:hover .pin.pub { transform: rotate(45deg) scale(.95); }
+  .tag.pub { background: var(--pub-wash); color: var(--pub); }
+  .map-toggle { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--ink-soft); cursor: pointer; }
+  .map-toggle input { accent-color: var(--pub); width: 15px; height: 15px; margin: 0; }
+  .map-pop .pop-rows { margin-top: 6px; display: flex; flex-direction: column; gap: 2px; color: var(--ink-soft); font-size: 12.5px; }
+  .map-pop .pop-rows strong { color: var(--ink); }
+  .map-pop .pop-pending { color: var(--ink-faint); font-style: italic; }
   .pin.let { background: var(--blue); }
   .pin.approx { background: var(--surface); border: 2.5px dashed var(--green); box-shadow: 0 1px 4px rgba(0,0,0,.35); }
   .pin.approx.let { border-color: var(--blue); }
@@ -403,8 +411,10 @@
       <div class="map-legend">
         <span><i class="pin sale"></i> For sale</span>
         <span><i class="pin let"></i> To let</span>
+        <span><i class="pin pub"></i> Trading pub</span>
         <span><i class="pin approx"></i> Postcode area only (approximate)</span>
       </div>
+      <label class="map-toggle"><input type="checkbox" id="toggle-pubs" checked> Show trading pubs</label>
     </div>
     <div id="map" role="application" aria-label="Map of tracked listings"></div>
     <p class="map-note" id="map-note" aria-live="polite">Locating listings…</p>
@@ -1481,8 +1491,19 @@
       var msg = shown.length + " of " + total + " listing" + (total === 1 ? "" : "s") + " on the map";
       if (shown.length < total) msg += " (" + (total - shown.length) + " could not be located)";
       if (approx) msg += " · " + approx + " shown at postcode-area centre";
+      var pubsShown = syncPubs();
+      if (pubItems.length) msg += " · " + pubsShown.length + " trading pub" + (pubsShown.length === 1 ? "" : "s");
       note.textContent = msg + ".";
+      shown = shown.concat(pubsShown);
       if (fit && shown.length) map.fitBounds(L.latLngBounds(shown).pad(0.25), { maxZoom: 15 });
+    }
+
+    // Fan co-located markers out around their shared point so none hides another.
+    function fan(lat, lng, i, n, approx) {
+      var r = approx ? 80 : 25, ang = (2 * Math.PI * i) / n;
+      lat += (r * Math.cos(ang)) / 111320;
+      lng += (r * Math.sin(ang)) / (111320 * Math.cos((lat * Math.PI) / 180));
+      return [lat, lng];
     }
 
     function build() {
@@ -1497,11 +1518,7 @@
         var g = groups[key];
         g.forEach(function (e, i) {
           var lat = e.loc.ll[0], lng = e.loc.ll[1];
-          if (g.length > 1) {   // fan co-located listings out so none hides another
-            var r = e.loc.approx ? 80 : 25, ang = (2 * Math.PI * i) / g.length;
-            lat += (r * Math.cos(ang)) / 111320;
-            lng += (r * Math.sin(ang)) / (111320 * Math.cos((lat * Math.PI) / 180));
-          }
+          if (g.length > 1) { var f = fan(lat, lng, i, g.length, e.loc.approx); lat = f[0]; lng = f[1]; }
           var status = e.card.getAttribute("data-status") === "let" ? "let" : "sale";
           var marker = L.marker([lat, lng], {
             title: e.card.querySelector("h3").textContent,
@@ -1532,6 +1549,123 @@
       sync(true);
     }
 
+    // ---- Trading pubs (data/pubs.json) ----------------------------------
+    // Separate layer, own colour. Follows the Area filter and its own toggle;
+    // the For sale / To let filter does not apply. Pubs flagged needs_review
+    // (theatres, cinemas, clubs...) are held back until confirmed as pubs.
+    var pubLayer = L.layerGroup().addTo(map);
+    var pubItems = [];   // { pub, marker, approx }
+    var toggle = document.getElementById("toggle-pubs");
+
+    function currentArea() {
+      var b = document.querySelector('#area-filters .chip-btn[aria-pressed="true"]');
+      return b ? b.getAttribute("data-value") : "all";
+    }
+
+    function syncPubs() {
+      var area = currentArea(), pts = [];
+      pubItems.forEach(function (it) {
+        var on = toggle.checked && (area === "all" || it.pub.area === area);
+        if (on) { pubLayer.addLayer(it.marker); pts.push(it.marker.getLatLng()); }
+        else pubLayer.removeLayer(it.marker);
+      });
+      return pts;
+    }
+
+    function row(label, value) {
+      var d = document.createElement("div");
+      var st = document.createElement("strong");
+      st.textContent = label + ": ";
+      d.appendChild(st);
+      d.appendChild(document.createTextNode(value));
+      return d;
+    }
+
+    function pubPopup(pub, approx) {
+      var box = document.createElement("div");
+      box.className = "map-pop";
+      var tags = document.createElement("div");
+      tags.className = "card-tags";
+      var t = document.createElement("span");
+      t.className = "tag pub";
+      t.textContent = "Trading pub";
+      tags.appendChild(t);
+      box.appendChild(tags);
+      var h = document.createElement("h4");
+      h.textContent = pub.name;
+      box.appendChild(h);
+      var addr = document.createElement("div");
+      addr.textContent = pub.address.replace(/,?\s*LONDON$/i, "") + ", " + pub.postcode;
+      box.appendChild(addr);
+      var rows = document.createElement("div");
+      rows.className = "pop-rows";
+      var m = pub.metrics || {};
+      if (m.google && m.google.rating != null)
+        rows.appendChild(row("Google", m.google.rating + " ★ (" + Number(m.google.reviews || 0).toLocaleString() + " reviews)"));
+      if (m.hygiene && m.hygiene.rating != null) rows.appendChild(row("Hygiene rating", m.hygiene.rating + "/5"));
+      if (pub.operator && pub.operator.company_name) rows.appendChild(row("Operator", pub.operator.company_name));
+      if (pub.score && pub.score.value != null)
+        rows.appendChild(row("Trading score", pub.score.value + "/100 (" + (pub.score.confidence || "low") + " confidence)"));
+      else {
+        var pend = document.createElement("div");
+        pend.className = "pop-pending";
+        pend.textContent = "Performance not scored yet";
+        rows.appendChild(pend);
+      }
+      box.appendChild(rows);
+      if (approx) {
+        var ap = document.createElement("div");
+        ap.className = "pop-approx";
+        ap.textContent = "Approximate location — postcode centre";
+        box.appendChild(ap);
+      }
+      return box;
+    }
+
+    function buildPubs(pubs) {
+      var groups = {};
+      pubs.forEach(function (pub) {
+        var loc = locate(norm(pub.postcode));
+        if (!loc) return;
+        var key = loc.ll[0].toFixed(5) + "," + loc.ll[1].toFixed(5);
+        (groups[key] = groups[key] || []).push({ pub: pub, loc: loc });
+      });
+      Object.keys(groups).forEach(function (key) {
+        var g = groups[key];
+        g.forEach(function (e, i) {
+          var lat = e.loc.ll[0], lng = e.loc.ll[1];
+          if (g.length > 1) { var f = fan(lat, lng, i, g.length, false); lat = f[0]; lng = f[1]; }
+          var marker = L.marker([lat, lng], {
+            title: e.pub.name,
+            icon: L.divIcon({
+              className: "pin-wrap",
+              html: '<span class="pin pub"></span>',
+              iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+            })
+          });
+          marker.bindPopup(pubPopup(e.pub, e.loc.approx));
+          pubItems.push({ pub: e.pub, marker: marker, approx: e.loc.approx });
+        });
+      });
+      sync(false);
+    }
+
+    function loadPubs() {
+      fetch("data/pubs.json")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          var pubs = ((j && j.pubs) || []).filter(function (p) {
+            return p.trading_status === "trading" && !p.needs_review && p.postcode;
+          });
+          if (!pubs.length) return;
+          var pk = [];
+          pubs.forEach(function (p) { var k = norm(p.postcode); if (pk.indexOf(k) < 0) pk.push(k); });
+          return geocode(pk).then(function () { buildPubs(pubs); });
+        })
+        .catch(function () {});
+    }
+    toggle.addEventListener("change", function () { sync(true); });
+
     // Re-sync after the existing filter handlers have updated card visibility.
     document.querySelectorAll(".chip-btn").forEach(function (b) {
       b.addEventListener("click", function () { sync(true); });
@@ -1548,6 +1682,7 @@
         return;
       }
       build();
+      loadPubs();
     });
   })();
 </script>
